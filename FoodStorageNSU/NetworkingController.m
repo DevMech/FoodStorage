@@ -20,7 +20,7 @@
     return sharedInstance;
 }
 
--(void)getProductByUPC:(NSString *)upc {
+- (void)getProductByUPC:(NSString *)upc {
     
     NSString *URLString = [NSString stringWithFormat:@"https://api.nutritionix.com/v1_1/item?upc=%@&appId=78c55fea&appKey=cd8ce9942548c48a2d84461a2d451b76", upc];
     NSURL *URL = [NSURL URLWithString:URLString];

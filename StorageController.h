@@ -15,7 +15,7 @@
 
 + (StorageController *)sharedInstance;
 
-- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration;
+- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration barcode:(NSString *)barcode;
 
 - (void)addFoodEntry:(FoodEntry *)foodEntry;
 - (void)removeFoodEntry:(FoodEntry *)foodEntry;

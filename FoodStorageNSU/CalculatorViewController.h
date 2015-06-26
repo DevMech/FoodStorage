@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CalculatorViewController : UIViewController
+@interface CalculatorViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
 
 @end

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D7658481B39D2C000D4D6F4 /* EssentialStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D7658471B39D2C000D4D6F4 /* EssentialStorageController.m */; };
 		7D76584B1B39D33600D4D6F4 /* EssentialFoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584A1B39D33600D4D6F4 /* EssentialFoodEntry.m */; };
 		7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */; };
 		7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */; };
@@ -25,6 +24,7 @@
 		7DEDE1C51B3326DC00AF11F2 /* CalculatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1C41B3326DC00AF11F2 /* CalculatorController.m */; };
 		7DEDE1C81B3326EC00AF11F2 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1C71B3326EC00AF11F2 /* Calculator.m */; };
 		7DEDE1D21B336F3E00AF11F2 /* BarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1D11B336F3E00AF11F2 /* BarCodeViewController.m */; };
+		7DEFBD451B3DE32C0074CAE1 /* EssentialStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +38,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D7658461B39D2C000D4D6F4 /* EssentialStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialStorageController.h; sourceTree = "<group>"; };
-		7D7658471B39D2C000D4D6F4 /* EssentialStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialStorageController.m; sourceTree = "<group>"; };
 		7D7658491B39D33600D4D6F4 /* EssentialFoodEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialFoodEntry.h; sourceTree = "<group>"; };
 		7D76584A1B39D33600D4D6F4 /* EssentialFoodEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialFoodEntry.m; sourceTree = "<group>"; };
 		7D76584C1B3B0C3000D4D6F4 /* AddFoodEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodEntryViewController.h; sourceTree = "<group>"; };
@@ -48,7 +46,7 @@
 		7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingController.m; sourceTree = "<group>"; };
 		7DD2DF741B34C06F006FB8E2 /* FoodStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStorageViewController.h; sourceTree = "<group>"; };
 		7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStorageViewController.m; sourceTree = "<group>"; };
-		7DEDE18E1B331D7100AF11F2 /* FoodStorageNSU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FoodStorageNSU.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7DEDE18E1B331D7100AF11F2 /* Prepared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prepared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEDE1921B331D7100AF11F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DEDE1931B331D7100AF11F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7DEDE1951B331D7100AF11F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -73,6 +71,8 @@
 		7DEDE1C71B3326EC00AF11F2 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		7DEDE1D01B336F3E00AF11F2 /* BarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeViewController.h; sourceTree = "<group>"; };
 		7DEDE1D11B336F3E00AF11F2 /* BarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeViewController.m; sourceTree = "<group>"; };
+		7DEFBD431B3DE32C0074CAE1 /* EssentialStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialStorageController.h; sourceTree = "<group>"; };
+		7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialStorageController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +120,7 @@
 		7DEDE18F1B331D7100AF11F2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7DEDE18E1B331D7100AF11F2 /* FoodStorageNSU.app */,
+				7DEDE18E1B331D7100AF11F2 /* Prepared.app */,
 				7DEDE1A71B331D7100AF11F2 /* FoodStorageNSUTests.xctest */,
 			);
 			name = Products;
@@ -187,8 +187,8 @@
 			children = (
 				7DEDE1B71B331E6000AF11F2 /* StorageController.h */,
 				7DEDE1B81B331E6000AF11F2 /* StorageController.m */,
-				7D7658461B39D2C000D4D6F4 /* EssentialStorageController.h */,
-				7D7658471B39D2C000D4D6F4 /* EssentialStorageController.m */,
+				7DEFBD431B3DE32C0074CAE1 /* EssentialStorageController.h */,
+				7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -225,9 +225,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7DEDE18D1B331D7100AF11F2 /* FoodStorageNSU */ = {
+		7DEDE18D1B331D7100AF11F2 /* Prepared */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7DEDE1B11B331D7100AF11F2 /* Build configuration list for PBXNativeTarget "FoodStorageNSU" */;
+			buildConfigurationList = 7DEDE1B11B331D7100AF11F2 /* Build configuration list for PBXNativeTarget "Prepared" */;
 			buildPhases = (
 				7DEDE18A1B331D7100AF11F2 /* Sources */,
 				7DEDE18B1B331D7100AF11F2 /* Frameworks */,
@@ -237,9 +237,9 @@
 			);
 			dependencies = (
 			);
-			name = FoodStorageNSU;
+			name = Prepared;
 			productName = FoodStorageNSU;
-			productReference = 7DEDE18E1B331D7100AF11F2 /* FoodStorageNSU.app */;
+			productReference = 7DEDE18E1B331D7100AF11F2 /* Prepared.app */;
 			productType = "com.apple.product-type.application";
 		};
 		7DEDE1A61B331D7100AF11F2 /* FoodStorageNSUTests */ = {
@@ -271,6 +271,7 @@
 				TargetAttributes = {
 					7DEDE18D1B331D7100AF11F2 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = J82ZA4388A;
 					};
 					7DEDE1A61B331D7100AF11F2 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -291,7 +292,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7DEDE18D1B331D7100AF11F2 /* FoodStorageNSU */,
+				7DEDE18D1B331D7100AF11F2 /* Prepared */,
 				7DEDE1A61B331D7100AF11F2 /* FoodStorageNSUTests */,
 			);
 		};
@@ -326,9 +327,9 @@
 				7DEDE1971B331D7100AF11F2 /* AppDelegate.m in Sources */,
 				7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */,
 				7DEDE1BF1B33261500AF11F2 /* CalculatorViewController.m in Sources */,
-				7D7658481B39D2C000D4D6F4 /* EssentialStorageController.m in Sources */,
 				7D76584B1B39D33600D4D6F4 /* EssentialFoodEntry.m in Sources */,
 				7DEDE1BC1B331EA200AF11F2 /* FoodEntry.m in Sources */,
+				7DEFBD451B3DE32C0074CAE1 /* EssentialStorageController.m in Sources */,
 				7DEDE1941B331D7100AF11F2 /* main.m in Sources */,
 				7DEDE1C81B3326EC00AF11F2 /* Calculator.m in Sources */,
 				7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */,
@@ -352,7 +353,7 @@
 /* Begin PBXTargetDependency section */
 		7DEDE1A91B331D7100AF11F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7DEDE18D1B331D7100AF11F2 /* FoodStorageNSU */;
+			target = 7DEDE18D1B331D7100AF11F2 /* Prepared */;
 			targetProxy = 7DEDE1A81B331D7100AF11F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -463,9 +464,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FoodStorageNSU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -473,9 +476,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = FoodStorageNSU/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -525,7 +530,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7DEDE1B11B331D7100AF11F2 /* Build configuration list for PBXNativeTarget "FoodStorageNSU" */ = {
+		7DEDE1B11B331D7100AF11F2 /* Build configuration list for PBXNativeTarget "Prepared" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7DEDE1B21B331D7100AF11F2 /* Debug */,

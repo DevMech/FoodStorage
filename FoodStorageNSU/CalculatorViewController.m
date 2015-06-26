@@ -7,6 +7,7 @@
 //
 
 #import "CalculatorViewController.h"
+#import "CalculatorController.h"
 
 @interface CalculatorViewController ()
 @property (weak, nonatomic) IBOutlet UIStepper *adultStepper;
@@ -39,21 +40,32 @@
     self.weekNumber.text = [@(self.weekStepper.value) stringValue];
 }
 - (IBAction)calculateAmounts:(id)sender {
+    [self.tabBarController setSelectedIndex:0];
+    [[CalculatorController sharedInstance] amountByFamily:self.adultsNumber.text andKids:self.childNumber.text andNumberOfWeeks:self.weekNumber.text];
+    
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark -
+#pragma mark - DataSource
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+ 
+    switch (section) {
+        case 0:
+            return 4;
+            break;
+        default:
+            return 1;
+            break;
+    }
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 2;
 }
-*/
+
 
 @end

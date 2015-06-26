@@ -13,6 +13,7 @@ static NSString * const TypeKey = @"type";
 static NSString * const AmountKey = @"amount";
 static NSString * const WeightKey = @"weight";
 static NSString * const TimestampKey = @"timestamp";
+static NSString * const RequiredAmountKey = @"required";
 
 @interface EssentialFoodEntry : NSObject
 
@@ -20,6 +21,7 @@ static NSString * const TimestampKey = @"timestamp";
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSNumber *amount;
 @property (strong, nonatomic) NSNumber *weight;
+@property (strong, nonatomic) NSNumber *requiredAmount;
 @property (strong, nonatomic) NSDate *timestamp;
 
 - (instancetype)initWithDictionary:(NSDictionary *)essentialFoodDictionary;

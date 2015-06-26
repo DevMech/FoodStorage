@@ -28,7 +28,7 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     return sharedInstance;
 }
 
-- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration {
+- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration barcode:(NSString *)barcode {
     
     FoodEntry *foodEntry = [FoodEntry new];
     foodEntry.title = title;
@@ -36,6 +36,7 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     foodEntry.weight = weight;
     foodEntry.expiration = expiration;
     foodEntry.timestamp = [NSDate date];
+    foodEntry.barcode = barcode;
     
     [self addFoodEntry:foodEntry];
     

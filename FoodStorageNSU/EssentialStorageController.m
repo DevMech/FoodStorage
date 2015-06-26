@@ -14,7 +14,7 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 
 @interface EssentialStorageController ()
 
-@property (strong, nonatomic) NSArray *essentialEntries;
+@property (nonatomic, strong) NSArray *essentialEntries;
 
 @end
 
@@ -32,6 +32,13 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
     return sharedInstance;
 }
 
+- (NSArray *)essentialNames {
+
+    NSArray *essentialNames = @[@"Grains", @"Dry Beans", @"Fats And Oils", @"Powdered Milk", @"Salt", @"Water"];
+    return essentialNames;
+
+}
+
 //- (void)createEssentialEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration toEntry:(EssentialFoodEntry *)essentialEntry{
 //    
 //    essentialEntry.title = title;
@@ -44,13 +51,12 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 //        
 //}
 
--(void)CreateEssentialObjects
+- (void)CreateEssentialObjects
 {
     if (![[NSUserDefaults standardUserDefaults] objectForKey:AllEssentialEntriesKey]) {
-        NSArray *essentialNames = @[@"Grains", @"Dry Beans", @"Fats/Oils", @"Powdered Milk", @"Salt", @"Sugar/Honey"];
         
         self.essentialEntries = [[NSArray alloc] init];
-        for (NSString *name in essentialNames) {
+        for (NSString *name in self.essentialNames) {
             EssentialFoodEntry *essentialFood = [[EssentialFoodEntry alloc]init];
             essentialFood.title = name;
             essentialFood.type = name;
@@ -65,9 +71,6 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 
     }
 }
-
-
-
 
 
 - (void)addEssentialEntry:(EssentialFoodEntry *)essentialEntry {

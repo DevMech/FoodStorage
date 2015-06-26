@@ -22,26 +22,37 @@
         self.amount = essentialFoodDictionary[AmountKey];
         self.weight = essentialFoodDictionary [WeightKey];
         self.timestamp = essentialFoodDictionary [TimestampKey];
+        self.requiredAmount = essentialFoodDictionary [RequiredAmountKey];
     }
     
     return self;
 }
 
 - (NSDictionary *)dictionaryRepresentation {
-    NSDictionary *essentialFoodDictionary = @{
-                                     TitleKey : self.title,
-                                     TypeKey : self.type,
-                                     AmountKey : self.amount,
-                                     WeightKey : self.weight,
-                                     TimestampKey : self.timestamp,
-                                     };
+    
+    NSMutableDictionary *essentialFoodDictionary = [[NSMutableDictionary alloc]init];
+    if (self.title) {
+        essentialFoodDictionary[TitleKey] = self.title;
+    }
+    if (self.type) {
+        essentialFoodDictionary[TypeKey] = self.type;
+    }
+    if (self.amount) {
+        essentialFoodDictionary[AmountKey] = self.amount;
+    }
+    if (self.weight) {
+        essentialFoodDictionary[WeightKey] = self.weight;
+    }
+    if (self.timestamp) {
+        essentialFoodDictionary[TimestampKey] = self.timestamp;
+    }
+    if (self.requiredAmount) {
+        essentialFoodDictionary[RequiredAmountKey] = self.requiredAmount;
+    }
     
     return essentialFoodDictionary;
     
 }
 
-
-
-
-
+ 
 @end

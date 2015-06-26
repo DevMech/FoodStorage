@@ -9,6 +9,13 @@
 #import "AddFoodEntryViewController.h"
 
 @interface AddFoodEntryViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UPCLabel;
+@property (weak, nonatomic) IBOutlet UILabel *typeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (weak, nonatomic) IBOutlet UILabel *expirationDateLabel;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
 
 @end
 
@@ -22,6 +29,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)saveButtonTapped:(id)sender {
 }
 
 /*
