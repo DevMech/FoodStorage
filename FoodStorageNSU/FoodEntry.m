@@ -20,21 +20,44 @@
         self.weight = foodDictionary [WeightKey];
         self.expiration = foodDictionary[ExpirationKey];
         self.timestamp = foodDictionary [TimestampKey];
+        self.requiredAmount = foodDictionary[RequiredKey];
     }
     
     return self;
 }
 
 - (NSDictionary *)dictionaryRepresentation {
-    NSDictionary *foodDictionary = @{
-                                     TitleKey : self.title,
-                                     TypeKey : self.type,
-                                     AmountKey : self.amount,
-                                     WeightKey : self.weight,
-                                     ExpirationKey : self.expiration,
-                                     TimestampKey : self.timestamp,
-                                     };
+
+    NSMutableDictionary *foodDictionary = [NSMutableDictionary new];
     
+    if (self.title) {
+        foodDictionary[TitleKey] = self.title;
+    }
+    
+    if (self.type) {
+        foodDictionary[TypeKey] = self.type;
+    }
+
+    if (self.amount) {
+        foodDictionary[AmountKey] = self.amount;
+    }
+
+    if (self.weight) {
+        foodDictionary[WeightKey] = self.weight;
+    }
+
+    if (self.expiration) {
+        foodDictionary[ExpirationKey] = self.expiration;
+    }
+
+    if (self.timestamp) {
+        foodDictionary[TimestampKey] = self.timestamp;
+    }
+
+    if (self.requiredAmount) {
+        foodDictionary[RequiredKey] = self.requiredAmount;
+    }
+
     return foodDictionary;
     
 }

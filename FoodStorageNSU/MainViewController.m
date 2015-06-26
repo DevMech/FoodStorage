@@ -7,8 +7,8 @@
 //
 
 #import "MainViewController.h"
-#import "EssentialStorageController.h"
-#import "EssentialFoodEntry.h"
+#import "StorageController.h"
+#import "FoodEntry.h"
 
 @interface MainViewController ()
 
@@ -26,19 +26,17 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCell"];
     
-    EssentialFoodEntry *entry = [EssentialStorageController sharedInstance].essentialEntries[indexPath.row];
+    FoodEntry *entry = [[StorageController sharedInstance] essentialEntry:indexPath.row];
     cell.textLabel.text = entry.title;
     
     return cell;
-    
-    
     
     
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [[EssentialStorageController sharedInstance].essentialEntries count];
+    return [StorageController sharedInstance].essentialNames.count;
     
 }
 

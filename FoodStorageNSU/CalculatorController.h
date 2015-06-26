@@ -7,11 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "EssentialStorageController.h"
 
 @interface CalculatorController : NSObject
-
-@property (nonatomic, assign) EssentialIndex singleEssentialIndex;
 
 +(instancetype)sharedInstance;
 

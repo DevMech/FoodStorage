@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D76584B1B39D33600D4D6F4 /* EssentialFoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584A1B39D33600D4D6F4 /* EssentialFoodEntry.m */; };
 		7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */; };
 		7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */; };
 		7DD2DF761B34C06F006FB8E2 /* FoodStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */; };
@@ -24,7 +23,6 @@
 		7DEDE1C51B3326DC00AF11F2 /* CalculatorController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1C41B3326DC00AF11F2 /* CalculatorController.m */; };
 		7DEDE1C81B3326EC00AF11F2 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1C71B3326EC00AF11F2 /* Calculator.m */; };
 		7DEDE1D21B336F3E00AF11F2 /* BarCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1D11B336F3E00AF11F2 /* BarCodeViewController.m */; };
-		7DEFBD451B3DE32C0074CAE1 /* EssentialStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,8 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7D7658491B39D33600D4D6F4 /* EssentialFoodEntry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialFoodEntry.h; sourceTree = "<group>"; };
-		7D76584A1B39D33600D4D6F4 /* EssentialFoodEntry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialFoodEntry.m; sourceTree = "<group>"; };
 		7D76584C1B3B0C3000D4D6F4 /* AddFoodEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodEntryViewController.h; sourceTree = "<group>"; };
 		7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodEntryViewController.m; sourceTree = "<group>"; };
 		7DD2DF701B34BBB6006FB8E2 /* NetworkingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingController.h; sourceTree = "<group>"; };
@@ -71,8 +67,6 @@
 		7DEDE1C71B3326EC00AF11F2 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
 		7DEDE1D01B336F3E00AF11F2 /* BarCodeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarCodeViewController.h; sourceTree = "<group>"; };
 		7DEDE1D11B336F3E00AF11F2 /* BarCodeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarCodeViewController.m; sourceTree = "<group>"; };
-		7DEFBD431B3DE32C0074CAE1 /* EssentialStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialStorageController.h; sourceTree = "<group>"; };
-		7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialStorageController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,8 +96,6 @@
 				7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */,
 				7DD2DF741B34C06F006FB8E2 /* FoodStorageViewController.h */,
 				7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */,
-				7D7658491B39D33600D4D6F4 /* EssentialFoodEntry.h */,
-				7D76584A1B39D33600D4D6F4 /* EssentialFoodEntry.m */,
 			);
 			name = Food;
 			sourceTree = "<group>";
@@ -187,8 +179,6 @@
 			children = (
 				7DEDE1B71B331E6000AF11F2 /* StorageController.h */,
 				7DEDE1B81B331E6000AF11F2 /* StorageController.m */,
-				7DEFBD431B3DE32C0074CAE1 /* EssentialStorageController.h */,
-				7DEFBD441B3DE32C0074CAE1 /* EssentialStorageController.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -327,9 +317,7 @@
 				7DEDE1971B331D7100AF11F2 /* AppDelegate.m in Sources */,
 				7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */,
 				7DEDE1BF1B33261500AF11F2 /* CalculatorViewController.m in Sources */,
-				7D76584B1B39D33600D4D6F4 /* EssentialFoodEntry.m in Sources */,
 				7DEDE1BC1B331EA200AF11F2 /* FoodEntry.m in Sources */,
-				7DEFBD451B3DE32C0074CAE1 /* EssentialStorageController.m in Sources */,
 				7DEDE1941B331D7100AF11F2 /* main.m in Sources */,
 				7DEDE1C81B3326EC00AF11F2 /* Calculator.m in Sources */,
 				7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */,

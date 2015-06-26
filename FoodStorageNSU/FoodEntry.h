@@ -15,6 +15,7 @@ static NSString * const WeightKey = @"weight";
 static NSString * const ExpirationKey = @"expiration";
 static NSString * const TimestampKey = @"timestamp";
 static NSString * const Barcode = @"barcode";
+static NSString * const RequiredKey = @"required";
 
 @interface FoodEntry : NSObject
 
@@ -25,6 +26,7 @@ static NSString * const Barcode = @"barcode";
 @property (strong, nonatomic) NSString *expiration;
 @property (strong, nonatomic) NSDate *timestamp;
 @property (strong, nonatomic) NSString *barcode;
+@property (strong, nonatomic) NSNumber *requiredAmount;
 
 - (instancetype)initWithDictionary:(NSDictionary *)foodDictionary;
 

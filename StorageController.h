@@ -9,6 +9,16 @@
 #import <Foundation/Foundation.h>
 #import "FoodEntry.h"
 
+typedef NS_ENUM(NSInteger, Essential) {
+    EssentialGrains,
+    EssentialDryBeans,
+    EssentialFatsAndOils,
+    EssentialPowderedMilk,
+    EssentialSalt,
+    EssentialWater
+};
+
+
 @interface StorageController : NSObject
 
 @property (strong, nonatomic, readonly) NSArray *foodEntries;
@@ -16,6 +26,11 @@
 + (StorageController *)sharedInstance;
 
 - (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration barcode:(NSString *)barcode;
+
+- (NSArray *)essentialNames;
+
+- (FoodEntry *)essentialEntry:(Essential)essential;
+- (void)updateEssential:(Essential)essential withFoodEntry:(FoodEntry *)entry;
 
 - (void)addFoodEntry:(FoodEntry *)foodEntry;
 - (void)removeFoodEntry:(FoodEntry *)foodEntry;

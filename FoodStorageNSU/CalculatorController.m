@@ -7,7 +7,8 @@
 //
 
 #import "CalculatorController.h"
-#import "EssentialFoodEntry.h"
+#import "StorageController.h"
+#import "FoodEntry.h"
 
 static NSNumber *grainsPerPerson;
 static NSNumber *dryBeansPerPerson;
@@ -57,10 +58,6 @@ static NSNumber *waterPerPerson;
 
 - (void)amountByFamily:(NSString *)adults andKids:(NSString *)kids andNumberOfWeeks:(NSString *)weeks
 {
-
-#pragma mark - DONT TOUCH THIS
-    NSArray *arrayOfEssentials = [EssentialStorageController sharedInstance].essentialEntries;
-    //Array of Essential food stored in the Essential Storage Controller
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
@@ -76,7 +73,6 @@ static NSNumber *waterPerPerson;
     NSNumber *numberOfPeople = @([numberOfAdults floatValue] + [numberOfKids floatValue]);
     //Defining what number of people is adding the number of adults by the number of kids.
     
-//#warning Need to setup all the required amounts here - Daniel
     NSNumber *requiredGrains = @([numberOfPeople floatValue] * [grainsPerPerson floatValue] * [numberOfWeeks floatValue]);
     NSNumber *requiredDryBeans = @([numberOfPeople floatValue] * [dryBeansPerPerson floatValue] * [numberOfWeeks floatValue]);
     NSNumber *requiredFatsAndOils = @([numberOfPeople floatValue] * [fatsAndOilsPerPerson floatValue] * [numberOfWeeks floatValue]);
@@ -84,49 +80,38 @@ static NSNumber *waterPerPerson;
     NSNumber *requiredSalt = @([numberOfPeople floatValue] * [saltPerPerson floatValue] * [numberOfWeeks floatValue]);
     NSNumber *requiredWater = @([numberOfPeople floatValue] * [waterPerPerson floatValue] * [numberOfWeeks floatValue]);
     
-//    NSArray *requiredFoodAmount = [[NSArray alloc]init];
-//    for (NSNumber *requireAmount in self.arrayOfRequirements) {
-//        NSNumber *requireFood =  @([numberOfPeople floatValue] * [requireAmount floatValue] * [numberOfWeeks floatValue]);
-//        requiredFoodAmount = [requiredFoodAmount arrayByAddingObject:requireFood];
-//    }
-    
     //setting the requiered ammount of essentials - taking the number of people multiplied by the requiered amount and the number of weeks
-    NSMutableArray *arrayToSave = [[NSMutableArray alloc]init];
-    //IMPORTANT: Array to replace/update the existant array [EssentialStorageController sharedInstance].essentialEntries with the new values
-    
-    
-    for (int i = 0; 0 < arrayOfEssentials.count; i++) {
+        
+    for (int i = 0; i < [StorageController sharedInstance].essentialNames.count; i++) {
         // THE INDEX NUMBER NEEDS TO CORRELATE WITH THE INDEXES OF THE TABLE VIEW IN THE MAIN VIEW CONTROLLER
-
-        EssentialIndex index = i;
         
-        EssentialFoodEntry *entry = arrayOfEssentials[index];
         
-        switch (index) {
-            case EssentialIndexDryBeans:
+        Essential essential = i;
+        FoodEntry *entry = [[StorageController sharedInstance] essentialEntry:essential];
+        
+        switch (essential) {
+            case EssentialDryBeans:
                 entry.requiredAmount = requiredGrains;
                 break;
-            case EssentialIndexGrains:
+            case EssentialGrains:
                 entry.requiredAmount = requiredDryBeans;
                 break;
-            case EssentialIndexFatsAndOils:
+            case EssentialFatsAndOils:
                 entry.requiredAmount = requiredFatsAndOils;
                 break;
-            case EssentialIndexPowderedMilk:
+            case EssentialPowderedMilk:
                 entry.requiredAmount = requiredPowderedMilk;
                 break;
-            case EssentialIndexSalt:
+            case EssentialSalt:
                 entry.requiredAmount = requiredSalt;
                 break;
-            case EssentialIndexWater:
+            case EssentialWater:
                 entry.requiredAmount = requiredWater;
                 break;
         }
-        
-        [arrayToSave addObject:entry];
+     
+        [[StorageController sharedInstance] updateEssential:essential withFoodEntry:entry];
     }
-
-        [EssentialStorageController sharedInstance].essentialEntries = arrayToSave;
 
 }
 
