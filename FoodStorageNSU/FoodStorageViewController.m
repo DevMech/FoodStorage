@@ -33,9 +33,6 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StorageTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
     
-    if (!cell) {
-        cell = [[StorageTableViewCell alloc]init];
-    }
     FoodEntry *foodEntry = [StorageController sharedInstance].foodEntries[indexPath.row];
     [cell updateWithFoodEntry:foodEntry];
     

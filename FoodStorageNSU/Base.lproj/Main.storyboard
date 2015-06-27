@@ -159,7 +159,7 @@
                                     <outlet property="delegate" destination="r3c-dI-lss" id="LCP-K3-24d"/>
                                 </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U98-Ke-tpZ">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U98-Ke-tpZ">
                                 <rect key="frame" x="0.0" y="287" width="600" height="162"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="600" id="hzJ-1x-6iq"/>
@@ -485,25 +485,25 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kxc-JB-M3w">
-                                            <rect key="frame" x="13" y="14" width="46" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <rect key="frame" x="13" y="14" width="51.5" height="23"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vtd-HV-TI8">
-                                            <rect key="frame" x="13" y="43" width="36" height="21"/>
+                                            <rect key="frame" x="13" y="39" width="36" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-77-mte">
-                                            <rect key="frame" x="532" y="14" width="60" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Expiration" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fzp-77-mte">
+                                            <rect key="frame" x="450.5" y="14" width="141.5" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Expiration" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1y-oC-MKd">
-                                            <rect key="frame" x="515" y="42" width="77" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Amount" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1y-oC-MKd">
+                                            <rect key="frame" x="450.5" y="34" width="141.5" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -512,18 +512,18 @@
                                     <constraints>
                                         <constraint firstItem="Vtd-HV-TI8" firstAttribute="leading" secondItem="Kxc-JB-M3w" secondAttribute="leading" id="5TG-oS-xME"/>
                                         <constraint firstItem="Kxc-JB-M3w" firstAttribute="leading" secondItem="ujn-zX-aRb" secondAttribute="leadingMargin" constant="5" id="6Hc-ol-kBM"/>
-                                        <constraint firstItem="Vtd-HV-TI8" firstAttribute="top" secondItem="Kxc-JB-M3w" secondAttribute="bottom" constant="8" id="NFf-Qx-FRM"/>
+                                        <constraint firstItem="Vtd-HV-TI8" firstAttribute="top" secondItem="Kxc-JB-M3w" secondAttribute="bottom" constant="2" id="NFf-Qx-FRM"/>
                                         <constraint firstItem="fzp-77-mte" firstAttribute="top" secondItem="ujn-zX-aRb" secondAttribute="topMargin" constant="6" id="OgM-z5-pne"/>
                                         <constraint firstItem="fzp-77-mte" firstAttribute="trailing" secondItem="ujn-zX-aRb" secondAttribute="trailingMargin" id="PAp-tE-C9F"/>
                                         <constraint firstItem="Kxc-JB-M3w" firstAttribute="top" secondItem="ujn-zX-aRb" secondAttribute="topMargin" constant="6" id="ibf-yd-3iw"/>
                                         <constraint firstItem="W1y-oC-MKd" firstAttribute="trailing" secondItem="ujn-zX-aRb" secondAttribute="trailingMargin" id="jyZ-So-Ex3"/>
-                                        <constraint firstItem="W1y-oC-MKd" firstAttribute="top" secondItem="fzp-77-mte" secondAttribute="bottom" constant="7" id="niU-uO-dZk"/>
+                                        <constraint firstItem="W1y-oC-MKd" firstAttribute="top" secondItem="fzp-77-mte" secondAttribute="bottom" constant="2" id="niU-uO-dZk"/>
                                         <constraint firstItem="fzp-77-mte" firstAttribute="trailing" secondItem="W1y-oC-MKd" secondAttribute="trailing" id="vRz-xN-ssb"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="amountLabel" destination="fzp-77-mte" id="hy0-D0-S3v"/>
-                                    <outlet property="expirationLabel" destination="W1y-oC-MKd" id="fIF-K2-WDi"/>
+                                    <outlet property="amountLabel" destination="W1y-oC-MKd" id="3bC-jx-q7B"/>
+                                    <outlet property="expirationLabel" destination="fzp-77-mte" id="eJh-BR-Fj8"/>
                                     <outlet property="nameLabel" destination="Kxc-JB-M3w" id="Jcz-bg-3Sn"/>
                                     <outlet property="typeLabel" destination="Vtd-HV-TI8" id="Ujo-4w-2sU"/>
                                 </connections>

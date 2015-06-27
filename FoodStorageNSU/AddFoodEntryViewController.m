@@ -40,7 +40,8 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButtonTapped:(id)sender {
-    [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.expirationText.text barcode:self.UPCText.text];
+
+    [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePIcker.date barcode:self.UPCText.text];
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{

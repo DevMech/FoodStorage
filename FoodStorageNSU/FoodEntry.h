@@ -23,7 +23,7 @@ static NSString * const RequiredKey = @"required";
 @property (strong, nonatomic) NSString *type;
 @property (strong, nonatomic) NSNumber *amount;
 @property (strong, nonatomic) NSNumber *weight;
-@property (strong, nonatomic) NSString *expiration;
+@property (strong, nonatomic) NSDate *expiration;
 @property (strong, nonatomic) NSDate *timestamp;
 @property (strong, nonatomic) NSString *barcode;
 @property (strong, nonatomic) NSNumber *requiredAmount;

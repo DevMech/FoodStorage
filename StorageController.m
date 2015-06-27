@@ -30,10 +30,11 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     return sharedInstance;
 }
 
-- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSString *)expiration barcode:(NSString *)barcode {
+- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSDate *)expiration barcode:(NSString *)barcode {
     
     FoodEntry *foodEntry = [FoodEntry new];
     foodEntry.title = title;
+    foodEntry.type = type;
     foodEntry.amount = amount;
     foodEntry.expiration = expiration;
     foodEntry.timestamp = [NSDate date];
@@ -47,10 +48,10 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     return [[FoodEntry alloc] initWithDictionary:essentialEntry];
 }
 
-- (void)updateEssential:(Essential)essential withFoodEntry:(FoodEntry *)entry {
+- (void)addFoodEntry:(FoodEntry *)entry forEssential:(Essential)essential {
 
     NSMutableDictionary *essentialEntry = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:self.essentialNames[essential]]];
-    if (essentialEntry == nil) {
+    if (essentialEntry.allKeys.count == 0) {
 
         // setting the first entry for essentials
         essentialEntry = [NSMutableDictionary new];
@@ -65,7 +66,7 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     }
     
     FoodEntry *newEntry = [[FoodEntry alloc] initWithDictionary:essentialEntry];
-    newEntry.title = entry.title;
+    newEntry.title = self.essentialNames[essential];
     newEntry.type = entry.type;
     newEntry.amount = entry.amount;
     newEntry.weight = entry.weight;
@@ -90,7 +91,7 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     
 }
 
-- (void)saveToPersistentStorage {
+- (BOOL)saveToPersistentStorage {
     NSMutableArray *foodEntryDictionaries = [NSMutableArray new];
     for (FoodEntry *foodEntry in self.foodEntries) {
         [foodEntryDictionaries addObject:[foodEntry dictionaryRepresentation]];
@@ -99,6 +100,9 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     [[NSUserDefaults standardUserDefaults] setObject:foodEntryDictionaries forKey:AllFoodEntriesKey];
     [[NSUserDefaults standardUserDefaults]synchronize];
     
+    
+    // Only return yes if it successfully saves
+    return YES;
 }
 
 - (void)loadFromPersistentStorage {
