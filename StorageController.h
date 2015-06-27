@@ -25,7 +25,7 @@ typedef NS_ENUM(NSInteger, Essential) {
 
 + (StorageController *)sharedInstance;
 
-- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration barcode:(NSString *)barcode;
+- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSString *)expiration barcode:(NSString *)barcode;
 
 - (NSArray *)essentialNames;
 

@@ -24,24 +24,22 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[StorageController alloc] init];
+        [sharedInstance loadFromPersistentStorage];
     });
+    
     return sharedInstance;
 }
 
-- (FoodEntry *)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type weight:(NSNumber *)weight expiration:(NSString *)expiration barcode:(NSString *)barcode {
+- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSString *)expiration barcode:(NSString *)barcode {
     
     FoodEntry *foodEntry = [FoodEntry new];
     foodEntry.title = title;
     foodEntry.amount = amount;
-    foodEntry.weight = weight;
     foodEntry.expiration = expiration;
     foodEntry.timestamp = [NSDate date];
     foodEntry.barcode = barcode;
     
     [self addFoodEntry:foodEntry];
-    
-    return foodEntry;
-    
 }
 
 - (FoodEntry *)essentialEntry:(Essential)essential {

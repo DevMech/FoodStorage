@@ -7,6 +7,9 @@
 //
 
 #import "FoodStorageViewController.h"
+#import "StorageController.h"
+#import "StorageTableViewCell.h"
+
 
 @interface FoodStorageViewController ()
 
@@ -22,6 +25,28 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewDidAppear:(BOOL)animated{
+    [self.tableView reloadData];
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    StorageTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
+    
+    if (!cell) {
+        cell = [[StorageTableViewCell alloc]init];
+    }
+    FoodEntry *foodEntry = [StorageController sharedInstance].foodEntries[indexPath.row];
+    [cell updateWithFoodEntry:foodEntry];
+    
+    return cell;
+
+}
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [StorageController sharedInstance].foodEntries.count;
+    
 }
 
 /*
