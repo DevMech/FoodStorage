@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "StorageController.h"
+#import "EssentialStorageController.h"
 #import "FoodEntry.h"
 
 @interface MainViewController ()
@@ -26,7 +27,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"mainViewCell"];
     
-    FoodEntry *entry = [[StorageController sharedInstance] essentialEntry:indexPath.row];
+    FoodEntry *entry = [EssentialStorageController essentialEntry:indexPath.row];
     cell.textLabel.text = entry.title;
     
     return cell;

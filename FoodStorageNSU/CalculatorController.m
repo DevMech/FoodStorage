@@ -8,6 +8,7 @@
 
 #import "CalculatorController.h"
 #import "StorageController.h"
+#import "EssentialStorageController.h"
 #import "FoodEntry.h"
 
 static NSNumber *grainsPerPerson;
@@ -87,7 +88,7 @@ static NSNumber *waterPerPerson;
         
         
         Essential essential = i;
-        FoodEntry *entry = [[StorageController sharedInstance] essentialEntry:essential];
+        FoodEntry *entry = [EssentialStorageController essentialEntry:essential];
         
         switch (essential) {
             case EssentialDryBeans:
@@ -110,7 +111,8 @@ static NSNumber *waterPerPerson;
                 break;
         }
      
-        [[StorageController sharedInstance] updateEssential:essential withFoodEntry:entry];
+        [EssentialStorageController updateFoodEntry:entry forEssential:essential];
+         
     }
 
 }

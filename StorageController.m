@@ -43,41 +43,6 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     [self addFoodEntry:foodEntry];
 }
 
-- (FoodEntry *)essentialEntry:(Essential)essential {
-    NSMutableDictionary *essentialEntry = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:self.essentialNames[essential]]];
-    return [[FoodEntry alloc] initWithDictionary:essentialEntry];
-}
-
-- (void)addFoodEntry:(FoodEntry *)entry forEssential:(Essential)essential {
-
-    NSMutableDictionary *essentialEntry = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:self.essentialNames[essential]]];
-    if (essentialEntry.allKeys.count == 0) {
-
-        // setting the first entry for essentials
-        essentialEntry = [NSMutableDictionary new];
-        essentialEntry[TitleKey] = self.essentialNames[essential];
-        essentialEntry[TypeKey] = @"";
-        essentialEntry[AmountKey] = @(0);
-        essentialEntry[WeightKey] = @(0);
-        essentialEntry[ExpirationKey] = @"";
-        essentialEntry[TimestampKey] = @"";
-        essentialEntry[Barcode] = @"";
-        essentialEntry[RequiredKey] = @(0);
-    }
-    
-    FoodEntry *newEntry = [[FoodEntry alloc] initWithDictionary:essentialEntry];
-    newEntry.title = self.essentialNames[essential];
-    newEntry.type = entry.type;
-    newEntry.amount = entry.amount;
-    newEntry.weight = entry.weight;
-    newEntry.expiration = entry.expiration;
-    newEntry.timestamp = entry.timestamp;
-    newEntry.barcode = entry.barcode;
-    newEntry.requiredAmount = entry.requiredAmount;
-    
-    [[NSUserDefaults standardUserDefaults] setObject:[newEntry dictionaryRepresentation] forKey:self.essentialNames[essential]];
-    
-}
 
 - (void)addFoodEntry:(FoodEntry *)foodEntry {
     if (!foodEntry) {
@@ -89,6 +54,44 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     self.foodEntries = mutableFoodEntries;
     [self saveToPersistentStorage];
     
+}
+
+- (NSArray *)entriesForEssential:(Essential)essential {
+
+    NSString *essentialKey = [NSString stringWithFormat:@"essential-%ld", (long)essential];
+    NSMutableArray *mutableFoodDictionaries = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:essentialKey]];
+
+    NSMutableArray *entries = [NSMutableArray new];
+    for (NSDictionary *foodEntry in mutableFoodDictionaries) {
+        [entries addObject:[[FoodEntry alloc] initWithDictionary:foodEntry]];
+    }
+
+    return entries;
+}
+
+-(void)addFoodEntry:(FoodEntry *)entry forEssential:(Essential)essential {
+    if (!entry) {
+        return;
+    }
+    
+    NSString *essentialKey = [NSString stringWithFormat:@"essential-%ld", (long)essential];
+    NSMutableArray *mutableFoodEntries = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:essentialKey]];
+    [mutableFoodEntries addObject:entry.dictionaryRepresentation];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:mutableFoodEntries forKey:essentialKey];
+}
+
+- (void)removeFoodEntry:(FoodEntry *)foodEntry forEssential:(Essential)essential {
+    // You need to write this method
+
+    NSString *essentialKey = [NSString stringWithFormat:@"essential-%ld", (long)essential];
+    NSMutableArray *mutableFoodEntries = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:essentialKey]];
+
+    // Find the one passed in, and remove it
+    
+    // Then save the new array to defaults
+    [[NSUserDefaults standardUserDefaults] setObject:mutableFoodEntries forKey:essentialKey];
+
 }
 
 - (BOOL)saveToPersistentStorage {

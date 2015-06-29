@@ -10,8 +10,20 @@
 #import "StorageController.h"
 #import "StorageTableViewCell.h"
 
+typedef NS_ENUM(NSUInteger, DisplaySetting) {
+    DisplayGrain,
+    DisplayBean,
+    DisplayFat,
+    DisplayMilk,
+    DisplaySalt,
+    DisplayWater,
+    DisplayAll,
+};
+
 
 @interface FoodStorageViewController ()
+
+@property (assign, nonatomic) DisplaySetting displaySetting;
 
 @end
 
@@ -30,6 +42,15 @@
 -(void)viewDidAppear:(BOOL)animated{
     [self.tableView reloadData];
 }
+
+#pragma mark - Actions
+
+- (IBAction)segmentedControlUpdated:(UISegmentedControl *)sender {
+    
+}
+
+#pragma mark - TableViewDatasource
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StorageTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
     
@@ -42,9 +63,27 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return [StorageController sharedInstance].foodEntries.count;
+    
+    switch (self.displaySetting) {
+        case DisplayGrain:
+            
+        case DisplayBean:
+            
+            
+        case DisplayAll:
+            return [StorageController sharedInstance].foodEntries.count;
+            
+        default:
+            
+            return 0;
+            
+            break;
+    }
+    
     
 }
+
+
 
 /*
 #pragma mark - Navigation
