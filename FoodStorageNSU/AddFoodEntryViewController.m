@@ -20,8 +20,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *UPCText;
 @property (weak, nonatomic) IBOutlet UITextField *typeText;
 @property (weak, nonatomic) IBOutlet UITextField *amountText;
-@property (weak, nonatomic) IBOutlet UITextField *expirationText;
-@property (weak, nonatomic) IBOutlet UIDatePicker *datePIcker;
+@property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 
 @end
@@ -31,8 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.datePIcker.enabled = NO;
-    self.datePIcker.alpha = 0;
+    
+    self.datePicker.enabled = NO;
+    self.datePicker.alpha = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,13 +40,19 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButtonTapped:(id)sender {
-
-    [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePIcker.date barcode:self.UPCText.text];
+    
+       [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePicker.date barcode:self.UPCText.text];
+    self.nameText.text = @"";
+    self.UPCText.text = @"";
+    self.typeText.text = @"";
+    self.amountText.text = @"";
+    
+    
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
-    self.datePIcker.enabled = YES;
-    self.datePIcker.alpha = 1;
+    self.datePicker.enabled = YES;
+    self.datePicker.alpha = 1;
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{

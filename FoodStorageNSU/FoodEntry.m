@@ -21,6 +21,7 @@
         self.expiration = foodDictionary[ExpirationKey];
         self.timestamp = foodDictionary [TimestampKey];
         self.requiredAmount = foodDictionary[RequiredKey];
+        self.foodCategory = foodDictionary [FoodCategoryKey];
     }
     
     return self;

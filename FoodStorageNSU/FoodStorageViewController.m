@@ -9,6 +9,7 @@
 #import "FoodStorageViewController.h"
 #import "StorageController.h"
 #import "StorageTableViewCell.h"
+#import "EssentialStorageController.h"
 
 typedef NS_ENUM(NSUInteger, DisplaySetting) {
     DisplayGrain,
@@ -68,7 +69,14 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
         case DisplayGrain:
             
         case DisplayBean:
+        
+        case DisplayFat:
             
+        case DisplayMilk:
+            
+        case DisplaySalt:
+            
+        case DisplayWater:
             
         case DisplayAll:
             return [StorageController sharedInstance].foodEntries.count;

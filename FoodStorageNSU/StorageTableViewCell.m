@@ -34,8 +34,12 @@
     self.amountLabel.text = [NSString stringWithFormat:@"%@",[foodEntry amount]];
 
     // Use date formatter to convert date into string
-    
-    self.expirationLabel.text =[foodEntry expiration].description;
+    NSDateFormatter *formattedDated = [[NSDateFormatter alloc]init];
+    [formattedDated setDateFormat:@"yyyy/MM/dd"];
+
+    NSString *finalString = [formattedDated stringFromDate:[foodEntry expiration]];
+
+    self.expirationLabel.text =finalString;
     
 }
 
