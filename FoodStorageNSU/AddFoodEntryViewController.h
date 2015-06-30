@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "StorageController.h"
 
 @interface AddFoodEntryViewController : UIViewController
+@property (readwrite, nonatomic) Essential essential;
+@property (readwrite, nonatomic) int essentialNumber;
 
 @end

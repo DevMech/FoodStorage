@@ -18,6 +18,7 @@ static NSString * const Barcode = @"barcode";
 static NSString * const RequiredKey = @"required";
 static NSString * const FoodCategoryKey = @"foodCategory";
 
+
 @interface FoodEntry : NSObject
 
 @property (strong, nonatomic) NSString *title;
@@ -29,6 +30,7 @@ static NSString * const FoodCategoryKey = @"foodCategory";
 @property (strong, nonatomic) NSString *barcode;
 @property (strong, nonatomic) NSNumber *requiredAmount;
 @property (strong, nonatomic) NSString *foodCategory;
+
 
 - (instancetype)initWithDictionary:(NSDictionary *)foodDictionary;
 

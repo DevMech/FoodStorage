@@ -15,6 +15,7 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 @interface EssentialStorageController ()
 
 @property (nonatomic, strong) NSArray *essentialEntries;
+@property (nonatomic, strong) NSArray *grainEntries;
 
 @end
 

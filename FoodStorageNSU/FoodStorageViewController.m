@@ -10,6 +10,7 @@
 #import "StorageController.h"
 #import "StorageTableViewCell.h"
 #import "EssentialStorageController.h"
+#import "AddFoodEntryViewController.h"
 
 typedef NS_ENUM(NSUInteger, DisplaySetting) {
     DisplayGrain,
@@ -25,6 +26,13 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 @interface FoodStorageViewController ()
 
 @property (assign, nonatomic) DisplaySetting displaySetting;
+@property (weak, nonatomic) IBOutlet UILabel *recommendedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *currentLabel;
+@property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
+@property (assign, nonatomic) CGFloat headerViewHeight;
 
 @end
 
@@ -33,6 +41,8 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.headerViewHeight = self.headerView.frame.size.height;
+    self.navigationItem.title = @"Grain";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -44,9 +54,61 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
     [self.tableView reloadData];
 }
 
+- (void)setDisplayValues:(DisplaySetting)displaySetting Alpha:(int)alpha {
+    
+    self.displaySetting = displaySetting;
+    self.recommendedLabel.alpha = alpha;
+    self.currentLabel.alpha = alpha;
+    self.progressBar.alpha = alpha;
+    self.imageView.alpha = alpha;
+    if (alpha == 0) {
+        CGRect newView = self.headerView.frame;
+        newView.size.height = self.segmentedController.frame.size.height + 10;
+        self.headerView.frame = newView;
+        [self.tableView setTableHeaderView:self.headerView];
+    }
+    else {
+        CGRect newView = self.headerView.frame;
+        newView.size.height = self.headerViewHeight;
+        self.headerView.frame = newView;
+        [self.tableView setTableHeaderView:self.headerView];
+        
+        
+    }
+}
+
 #pragma mark - Actions
 
 - (IBAction)segmentedControlUpdated:(UISegmentedControl *)sender {
+    switch (sender.selectedSegmentIndex) {
+        case DisplayGrain:
+            [self setDisplayValues:DisplayGrain Alpha:1];
+            break;
+            
+        case DisplayBean:
+            [self setDisplayValues:DisplayBean Alpha:1];
+            break;
+            
+        case DisplayFat:
+            [self setDisplayValues:DisplayFat Alpha:1];
+            break;
+         
+        case DisplayMilk:
+            [self setDisplayValues:DisplayMilk Alpha:1];
+            break;
+           
+        case DisplaySalt:
+            [self setDisplayValues:DisplaySalt Alpha:1];
+            break;
+            
+        case DisplayWater:
+            [self setDisplayValues:DisplayWater Alpha:1];
+            break;
+            
+        case DisplayAll:
+            [self setDisplayValues:DisplayAll Alpha:0];
+            break;
+    }
     
 }
 
@@ -93,14 +155,30 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 
 
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    AddFoodEntryViewController *foodEntryViewController = [segue destinationViewController];
+    
+    
+    switch (self.displaySetting) {
+        case DisplayGrain:
+            foodEntryViewController.essentialNumber = self.displaySetting;
+            break;
+        case DisplayBean:
+            
+        case DisplayFat:
+            
+        case DisplayMilk:
+            
+        case DisplaySalt:
+            
+        case DisplayWater:
+            
+        case DisplayAll:
+            foodEntryViewController.essentialNumber = self.displaySetting;
+            break;
+    }
+    
 }
-*/
 
 @end

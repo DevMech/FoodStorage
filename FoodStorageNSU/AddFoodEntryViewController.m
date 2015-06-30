@@ -7,7 +7,8 @@
 //
 
 #import "AddFoodEntryViewController.h"
-#import "StorageController.h"
+#import "EssentialStorageController.h"
+
 
 @interface AddFoodEntryViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
@@ -23,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 
+
 @end
 
 @implementation AddFoodEntryViewController
@@ -30,9 +32,31 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self updateWithEssential:self.essentialNumber];
     
     self.datePicker.enabled = NO;
     self.datePicker.alpha = 0;
+}
+
+- (void)updateWithEssential:(int)essential  {
+    if (essential == 6) {
+        self.UPCLabel.text = @"UPC";
+    }
+    else{
+    switch (essential) {
+        case EssentialGrains:
+            self.UPCLabel.text = @"Weight";
+            break;
+        case EssentialDryBeans:
+            self.UPCLabel.text = @"Weight";
+            break;
+    
+        
+        default:
+            break;
+    }
+    }
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,20 +64,37 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButtonTapped:(id)sender {
-    
+    if (self.essentialNumber == 6) {
+
        [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePicker.date barcode:self.UPCText.text];
+
+    }else {
+        // Save essential
+        [EssentialStorageController essentialEntry:self.essentialNumber];
+        
+        }
+        
     self.nameText.text = @"";
     self.UPCText.text = @"";
     self.typeText.text = @"";
     self.amountText.text = @"";
     
+    [UIView animateWithDuration:1.5 animations:^{
+        self.datePicker.alpha = 0;
+    }];
+    
+    
+}
+- (IBAction)calendarPopUp:(id)sender {
+    self.datePicker.enabled = YES;
+    
+    [UIView animateWithDuration:1.5 animations:^{
+        self.datePicker.alpha = 1;
+    }];
     
 }
 
--(void)textFieldDidEndEditing:(UITextField *)textField{
-    self.datePicker.enabled = YES;
-    self.datePicker.alpha = 1;
-}
+
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
     [textField resignFirstResponder];
