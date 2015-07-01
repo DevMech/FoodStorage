@@ -15,7 +15,8 @@ typedef NS_ENUM(NSInteger, Essential) {
     EssentialFatsAndOils,
     EssentialPowderedMilk,
     EssentialSalt,
-    EssentialWater
+    EssentialWater,
+    EssentialAll
 };
 
 

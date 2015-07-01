@@ -184,8 +184,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="UPCLabel" destination="cFD-de-DIk" id="XnQ-Tn-dXR"/>
-                        <outlet property="UPCText" destination="Ujw-Tb-g8e" id="pJH-Jq-qIY"/>
+                        <outlet property="UpcAndWeightLabel" destination="cFD-de-DIk" id="J9k-G1-gOP"/>
+                        <outlet property="UpcAndWeightText" destination="Ujw-Tb-g8e" id="Tqb-c2-1sq"/>
                         <outlet property="amountLabel" destination="ZAz-g1-5bw" id="V8P-yW-TWB"/>
                         <outlet property="amountText" destination="juA-Ba-Emh" id="APv-o7-J6e"/>
                         <outlet property="datePicker" destination="U98-Ke-tpZ" id="qiP-om-wat"/>

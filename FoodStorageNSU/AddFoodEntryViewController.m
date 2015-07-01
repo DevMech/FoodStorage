@@ -12,13 +12,13 @@
 
 @interface AddFoodEntryViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *UPCLabel;
+@property (weak, nonatomic) IBOutlet UILabel *UpcAndWeightLabel;
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expirationDateLabel;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
-@property (weak, nonatomic) IBOutlet UITextField *UPCText;
+@property (weak, nonatomic) IBOutlet UITextField *UpcAndWeightText;
 @property (weak, nonatomic) IBOutlet UITextField *typeText;
 @property (weak, nonatomic) IBOutlet UITextField *amountText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
@@ -38,23 +38,28 @@
     self.datePicker.alpha = 0;
 }
 
-- (void)updateWithEssential:(int)essential  {
-    if (essential == 6) {
-        self.UPCLabel.text = @"UPC";
-    }
-    else{
-    switch (essential) {
-        case EssentialGrains:
-            self.UPCLabel.text = @"Weight";
-            break;
-        case EssentialDryBeans:
-            self.UPCLabel.text = @"Weight";
-            break;
+- (void)updateWithEssential:(Essential)essential  {
+
+    if (essential == EssentialAll) {
     
+        self.UpcAndWeightLabel.text = @"UPC";
+    
+    } else {
         
-        default:
-            break;
-    }
+        switch (essential) {
+            case EssentialGrains:
+                self.UpcAndWeightLabel.text = @"Weight";
+                break;
+            case EssentialDryBeans:
+                self.UpcAndWeightLabel.text = @"Weight";
+                break;
+                
+                
+            default:
+                break;
+                
+        }
+        
     }
 
 }
@@ -64,18 +69,20 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)saveButtonTapped:(id)sender {
+
     if (self.essentialNumber == 6) {
 
-       [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePicker.date barcode:self.UPCText.text];
+       [[StorageController sharedInstance]createFoodEntryWithTitle:self.nameText.text amount:[[NSNumberFormatter new] numberFromString: self.amountText.text] type:self.typeText.text expiration:self.datePicker.date barcode:self.UpcAndWeightText.text];
 
-    }else {
+    } else {
+        
         // Save essential
         [EssentialStorageController essentialEntry:self.essentialNumber];
         
-        }
+    }
         
     self.nameText.text = @"";
-    self.UPCText.text = @"";
+    self.UpcAndWeightText.text = @"";
     self.typeText.text = @"";
     self.amountText.text = @"";
     
