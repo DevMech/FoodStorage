@@ -6,20 +6,20 @@
 //  Copyright (c) 2015 Austin Mecham. All rights reserved.
 //
 
-#import "EssentialStorageController.h"
+#import "CalculatorResultsStorageHelper.h"
 
 
 
 static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 
-@interface EssentialStorageController ()
+@interface CalculatorResultsStorageHelper ()
 
 @property (nonatomic, strong) NSArray *essentialEntries;
 @property (nonatomic, strong) NSArray *grainEntries;
 
 @end
 
-@implementation EssentialStorageController
+@implementation CalculatorResultsStorageHelper
 
 + (FoodEntry *)essentialEntry:(Essential)essential {
     NSMutableDictionary *essentialEntry = [NSMutableDictionary dictionaryWithDictionary:[[NSUserDefaults standardUserDefaults] objectForKey:[StorageController sharedInstance].essentialNames[essential]]];
@@ -54,6 +54,13 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
     newEntry.requiredAmount = entry.requiredAmount;
     
     [[NSUserDefaults standardUserDefaults] setObject:[newEntry dictionaryRepresentation] forKey:[StorageController sharedInstance].essentialNames[essential]];
+    
+}
+
++ (double)requiredAmountForEssential:(Essential)essential {
+
+    FoodEntry *entry = [self essentialEntry:essential];
+    return entry.requiredAmount.doubleValue;
     
 }
 

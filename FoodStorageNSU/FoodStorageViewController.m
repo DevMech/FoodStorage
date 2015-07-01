@@ -9,23 +9,13 @@
 #import "FoodStorageViewController.h"
 #import "StorageController.h"
 #import "StorageTableViewCell.h"
-#import "EssentialStorageController.h"
+#import "CalculatorResultsStorageHelper.h"
 #import "AddFoodEntryViewController.h"
-
-typedef NS_ENUM(NSUInteger, DisplaySetting) {
-    DisplayGrain,
-    DisplayBean,
-    DisplayFat,
-    DisplayMilk,
-    DisplaySalt,
-    DisplayWater,
-    DisplayAll,
-};
 
 
 @interface FoodStorageViewController ()
 
-@property (assign, nonatomic) DisplaySetting displaySetting;
+@property (assign, nonatomic) Essential displayEssential;
 @property (weak, nonatomic) IBOutlet UILabel *recommendedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *currentLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *progressBar;
@@ -54,9 +44,9 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
     [self.tableView reloadData];
 }
 
-- (void)setDisplayValues:(DisplaySetting)displaySetting Alpha:(int)alpha {
+- (void)setEssentialValues:(Essential)EssentialSetting Alpha:(int)alpha {
     
-    self.displaySetting = displaySetting;
+    self.displayEssential = EssentialSetting;
     self.recommendedLabel.alpha = alpha;
     self.currentLabel.alpha = alpha;
     self.progressBar.alpha = alpha;
@@ -80,35 +70,17 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 #pragma mark - Actions
 
 - (IBAction)segmentedControlUpdated:(UISegmentedControl *)sender {
-    switch (sender.selectedSegmentIndex) {
-        case DisplayGrain:
-            [self setDisplayValues:DisplayGrain Alpha:1];
-            break;
-            
-        case DisplayBean:
-            [self setDisplayValues:DisplayBean Alpha:1];
-            break;
-            
-        case DisplayFat:
-            [self setDisplayValues:DisplayFat Alpha:1];
-            break;
-         
-        case DisplayMilk:
-            [self setDisplayValues:DisplayMilk Alpha:1];
-            break;
-           
-        case DisplaySalt:
-            [self setDisplayValues:DisplaySalt Alpha:1];
-            break;
-            
-        case DisplayWater:
-            [self setDisplayValues:DisplayWater Alpha:1];
-            break;
-            
-        case DisplayAll:
-            [self setDisplayValues:DisplayAll Alpha:0];
-            break;
+
+
+    BOOL greater = sender.selectedSegmentIndex > self.displayEssential;
+    
+    if (sender.selectedSegmentIndex == EssentialAll) {
+        [self setEssentialValues:sender.selectedSegmentIndex Alpha:0];
+    } else {
+        [self setEssentialValues:sender.selectedSegmentIndex Alpha:1];
     }
+
+    [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: greater ? UITableViewRowAnimationLeft : UITableViewRowAnimationRight];
     
 }
 
@@ -117,7 +89,7 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StorageTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
     
-    FoodEntry *foodEntry = [StorageController sharedInstance].foodEntries[indexPath.row];
+    FoodEntry *foodEntry = [[StorageController sharedInstance] entriesForEssential:self.displayEssential][indexPath.row];
     [cell updateWithFoodEntry:foodEntry];
     
     return cell;
@@ -126,30 +98,7 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    
-    switch (self.displaySetting) {
-        case DisplayGrain:
-            
-        case DisplayBean:
-        
-        case DisplayFat:
-            
-        case DisplayMilk:
-            
-        case DisplaySalt:
-            
-        case DisplayWater:
-            
-        case DisplayAll:
-            return [StorageController sharedInstance].foodEntries.count;
-            
-        default:
-            
-            return 0;
-            
-            break;
-    }
-    
+    return [[StorageController sharedInstance] entriesForEssential:self.displayEssential].count;
     
 }
 
@@ -157,27 +106,9 @@ typedef NS_ENUM(NSUInteger, DisplaySetting) {
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
     AddFoodEntryViewController *foodEntryViewController = [segue destinationViewController];
-    
-    
-    switch (self.displaySetting) {
-        case DisplayGrain:
-            foodEntryViewController.essentialNumber = self.displaySetting;
-            break;
-        case DisplayBean:
-            
-        case DisplayFat:
-            
-        case DisplayMilk:
-            
-        case DisplaySalt:
-            
-        case DisplayWater:
-            
-        case DisplayAll:
-            foodEntryViewController.essentialNumber = self.displaySetting;
-            break;
-    }
+    foodEntryViewController.essential = self.displayEssential;
     
 }
 

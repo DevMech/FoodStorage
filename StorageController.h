@@ -22,20 +22,16 @@ typedef NS_ENUM(NSInteger, Essential) {
 
 @interface StorageController : NSObject
 
-@property (strong, nonatomic, readonly) NSArray *foodEntries;
-
 + (StorageController *)sharedInstance;
-
-- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSDate *)expiration barcode:(NSString *)barcode;
 
 - (NSArray *)essentialNames;
 
 - (NSArray *)entriesForEssential:(Essential)essential;
-- (void)addFoodEntry:(FoodEntry *)entry forEssential:(Essential)essential;
 
-- (void)addFoodEntry:(FoodEntry *)foodEntry;
-- (void)removeFoodEntry:(FoodEntry *)foodEntry;
+- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSDate *)expiration barcode:(NSString *)barcode essential:(Essential)essential;
 
-- (void)save;
+- (void)removeFoodEntry:(FoodEntry *)foodEntry forEssential:(Essential)essential;
+
+- (double)weightOrVolumeForEssential:(Essential)essential;
 
 @end

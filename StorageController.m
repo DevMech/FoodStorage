@@ -24,13 +24,12 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[StorageController alloc] init];
-        [sharedInstance loadFromPersistentStorage];
     });
     
     return sharedInstance;
 }
 
-- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSDate *)expiration barcode:(NSString *)barcode {
+- (void)createFoodEntryWithTitle:(NSString *)title amount:(NSNumber *)amount type:(NSString *)type expiration:(NSDate *)expiration barcode:(NSString *)barcode essential:(Essential)essential {
     
     FoodEntry *foodEntry = [FoodEntry new];
     foodEntry.title = title;
@@ -40,21 +39,10 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
     foodEntry.timestamp = [NSDate date];
     foodEntry.barcode = barcode;
     
-    [self addFoodEntry:foodEntry];
-}
-
-
-- (void)addFoodEntry:(FoodEntry *)foodEntry {
-    if (!foodEntry) {
-        return;
-    }
-    NSMutableArray *mutableFoodEntries = self.foodEntries.mutableCopy;
-    [mutableFoodEntries addObject:foodEntry];
-    
-    self.foodEntries = mutableFoodEntries;
-    [self saveToPersistentStorage];
+    [self addFoodEntry:foodEntry forEssential:essential];
     
 }
+
 
 - (NSArray *)entriesForEssential:(Essential)essential {
 
@@ -86,61 +74,34 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
 
     NSString *essentialKey = [NSString stringWithFormat:@"essential-%ld", (long)essential];
     NSMutableArray *mutableFoodEntries = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:essentialKey]];
-
-    // Find the one passed in, and remove it
+    
+    for (int i = 0; i < mutableFoodEntries.count; i++) {
+        NSDictionary *checkEntry = mutableFoodEntries[i];
+        
+        // You can't create 2 at once. They will only have the same timestamp if they are the same thing.
+        
+        if ([checkEntry[TimestampKey] isEqualToDate:foodEntry.timestamp]) {
+            [mutableFoodEntries removeObject:checkEntry];
+        }
+    }
     
     // Then save the new array to defaults
     [[NSUserDefaults standardUserDefaults] setObject:mutableFoodEntries forKey:essentialKey];
 
 }
 
-- (BOOL)saveToPersistentStorage {
-    NSMutableArray *foodEntryDictionaries = [NSMutableArray new];
-    for (FoodEntry *foodEntry in self.foodEntries) {
-        [foodEntryDictionaries addObject:[foodEntry dictionaryRepresentation]];
-    }
-    
-    [[NSUserDefaults standardUserDefaults] setObject:foodEntryDictionaries forKey:AllFoodEntriesKey];
-    [[NSUserDefaults standardUserDefaults]synchronize];
-    
-    
-    // Only return yes if it successfully saves
-    return YES;
-}
-
-- (void)loadFromPersistentStorage {
-    NSArray *foodEntryDictionaries = [[NSUserDefaults standardUserDefaults]objectForKey:AllFoodEntriesKey];
-    
-    NSMutableArray *foodEntries = [NSMutableArray new];
-    for (NSDictionary *foodEntry in foodEntryDictionaries) {
-        [foodEntries addObject:[[FoodEntry alloc] initWithDictionary:foodEntry]];
-    }
-    
-    self.foodEntries = foodEntries;
-}
-
-- (void)save {
-    [self saveToPersistentStorage];
-    
-}
-
-- (void)removeFoodEntry:(FoodEntry *)foodEntry {
-    if (!foodEntry) {
-        return;
-    }
-    
-    NSMutableArray *mutableFoodEntries = self.foodEntries.mutableCopy;
-    [mutableFoodEntries removeObject:foodEntry];
-    
-    self.foodEntries = mutableFoodEntries;
-    [self saveToPersistentStorage];
-    
-}
-
 - (NSArray *)essentialNames {
 
     NSArray *essentialNames = @[@"Grains", @"Dry Beans", @"Fats And Oils", @"Powdered Milk", @"Salt", @"Water"];
     return essentialNames;
+    
+}
+
+- (double)weightOrVolumeForEssential:(Essential)essential {
+
+    // iterate through the entries in the array (that are not expired) and add them up and return the total
+    
+    return 0;
     
 }
 

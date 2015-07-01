@@ -9,16 +9,14 @@
 /* Begin PBXBuildFile section */
 		7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */; };
 		7DA242871B3E03F30006E7E0 /* StorageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA242861B3E03F30006E7E0 /* StorageTableViewCell.m */; };
-		7DA2428A1B3F50E90006E7E0 /* EssentialStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA242891B3F50E90006E7E0 /* EssentialStorageController.m */; };
+		7DA2428A1B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA242891B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m */; };
 		7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */; };
 		7DD2DF761B34C06F006FB8E2 /* FoodStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */; };
 		7DEDE1941B331D7100AF11F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1931B331D7100AF11F2 /* main.m */; };
 		7DEDE1971B331D7100AF11F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1961B331D7100AF11F2 /* AppDelegate.m */; };
-		7DEDE19A1B331D7100AF11F2 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1991B331D7100AF11F2 /* MainViewController.m */; };
 		7DEDE19D1B331D7100AF11F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEDE19B1B331D7100AF11F2 /* Main.storyboard */; };
 		7DEDE19F1B331D7100AF11F2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7DEDE19E1B331D7100AF11F2 /* Images.xcassets */; };
 		7DEDE1A21B331D7100AF11F2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DEDE1A01B331D7100AF11F2 /* LaunchScreen.xib */; };
-		7DEDE1AE1B331D7100AF11F2 /* FoodStorageNSUTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1AD1B331D7100AF11F2 /* FoodStorageNSUTests.m */; };
 		7DEDE1B91B331E6000AF11F2 /* StorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1B81B331E6000AF11F2 /* StorageController.m */; };
 		7DEDE1BC1B331EA200AF11F2 /* FoodEntry.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1BB1B331EA200AF11F2 /* FoodEntry.m */; };
 		7DEDE1BF1B33261500AF11F2 /* CalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1BE1B33261500AF11F2 /* CalculatorViewController.m */; };
@@ -42,8 +40,8 @@
 		7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodEntryViewController.m; sourceTree = "<group>"; };
 		7DA242851B3E03F30006E7E0 /* StorageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageTableViewCell.h; sourceTree = "<group>"; };
 		7DA242861B3E03F30006E7E0 /* StorageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageTableViewCell.m; sourceTree = "<group>"; };
-		7DA242881B3F50E90006E7E0 /* EssentialStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EssentialStorageController.h; sourceTree = "<group>"; };
-		7DA242891B3F50E90006E7E0 /* EssentialStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EssentialStorageController.m; sourceTree = "<group>"; };
+		7DA242881B3F50E90006E7E0 /* CalculatorResultsStorageHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatorResultsStorageHelper.h; sourceTree = "<group>"; };
+		7DA242891B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatorResultsStorageHelper.m; sourceTree = "<group>"; };
 		7DD2DF701B34BBB6006FB8E2 /* NetworkingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingController.h; sourceTree = "<group>"; };
 		7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingController.m; sourceTree = "<group>"; };
 		7DD2DF741B34C06F006FB8E2 /* FoodStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStorageViewController.h; sourceTree = "<group>"; };
@@ -53,8 +51,6 @@
 		7DEDE1931B331D7100AF11F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7DEDE1951B331D7100AF11F2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7DEDE1961B331D7100AF11F2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7DEDE1981B331D7100AF11F2 /* MainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		7DEDE1991B331D7100AF11F2 /* MainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		7DEDE19C1B331D7100AF11F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7DEDE19E1B331D7100AF11F2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7DEDE1A11B331D7100AF11F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -187,8 +183,8 @@
 				7DA242861B3E03F30006E7E0 /* StorageTableViewCell.m */,
 				7DEDE1B71B331E6000AF11F2 /* StorageController.h */,
 				7DEDE1B81B331E6000AF11F2 /* StorageController.m */,
-				7DA242881B3F50E90006E7E0 /* EssentialStorageController.h */,
-				7DA242891B3F50E90006E7E0 /* EssentialStorageController.m */,
+				7DA242881B3F50E90006E7E0 /* CalculatorResultsStorageHelper.h */,
+				7DA242891B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m */,
 			);
 			name = Storage;
 			sourceTree = "<group>";
@@ -198,8 +194,6 @@
 			children = (
 				7DEDE1951B331D7100AF11F2 /* AppDelegate.h */,
 				7DEDE1961B331D7100AF11F2 /* AppDelegate.m */,
-				7DEDE1981B331D7100AF11F2 /* MainViewController.h */,
-				7DEDE1991B331D7100AF11F2 /* MainViewController.m */,
 			);
 			name = MainView;
 			sourceTree = "<group>";
@@ -323,13 +317,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DEDE19A1B331D7100AF11F2 /* MainViewController.m in Sources */,
 				7DEDE1971B331D7100AF11F2 /* AppDelegate.m in Sources */,
 				7DA242871B3E03F30006E7E0 /* StorageTableViewCell.m in Sources */,
 				7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */,
 				7DEDE1BF1B33261500AF11F2 /* CalculatorViewController.m in Sources */,
 				7DEDE1BC1B331EA200AF11F2 /* FoodEntry.m in Sources */,
-				7DA2428A1B3F50E90006E7E0 /* EssentialStorageController.m in Sources */,
+				7DA2428A1B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m in Sources */,
 				7DEDE1941B331D7100AF11F2 /* main.m in Sources */,
 				7DEDE1C81B3326EC00AF11F2 /* Calculator.m in Sources */,
 				7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */,
@@ -344,7 +337,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7DEDE1AE1B331D7100AF11F2 /* FoodStorageNSUTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

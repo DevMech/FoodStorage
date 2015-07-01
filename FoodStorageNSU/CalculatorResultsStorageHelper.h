@@ -10,9 +10,11 @@
 #import "StorageController.h"
 
 
-@interface EssentialStorageController : NSObject
+@interface CalculatorResultsStorageHelper : NSObject
 
 + (FoodEntry *)essentialEntry:(Essential)essential;
 + (void)updateFoodEntry:(FoodEntry *)entry forEssential:(Essential)essential;
+
++ (double)requiredAmountForEssential:(Essential)essential;
 
 @end
