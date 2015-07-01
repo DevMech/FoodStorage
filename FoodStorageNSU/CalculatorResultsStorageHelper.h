@@ -1,5 +1,5 @@
 //
-//  EssentialStorageController.h
+//  CalculatorResultsStorageHelper.h
 //  FoodStorageNSU
 //
 //  Created by Austin Mecham on 6/23/15.
