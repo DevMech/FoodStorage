@@ -91,10 +91,10 @@ static NSNumber *waterPerPerson;
         FoodEntry *entry = [CalculatorResultsStorageHelper essentialEntry:essential];
         
         switch (essential) {
-            case EssentialDryBeans:
+            case EssentialGrains:
                 entry.requiredAmount = requiredGrains;
                 break;
-            case EssentialGrains:
+            case EssentialDryBeans:
                 entry.requiredAmount = requiredDryBeans;
                 break;
             case EssentialFatsAndOils:

@@ -40,7 +40,7 @@
     self.weekNumber.text = [@(self.weekStepper.value) stringValue];
 }
 - (IBAction)calculateAmounts:(id)sender {
-    [self.tabBarController setSelectedIndex:0];
+    [self.navigationController popViewControllerAnimated:YES];
     [[CalculatorController sharedInstance] amountByFamily:self.adultsNumber.text andKids:self.childNumber.text andNumberOfWeeks:self.weekNumber.text];
     
 }

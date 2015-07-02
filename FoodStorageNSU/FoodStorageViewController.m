@@ -13,6 +13,7 @@
 #import "AddFoodEntryViewController.h"
 
 
+
 @interface FoodStorageViewController ()
 
 @property (assign, nonatomic) Essential displayEssential;
@@ -23,6 +24,8 @@
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *segmentedController;
 @property (assign, nonatomic) CGFloat headerViewHeight;
+@property (weak, nonatomic) IBOutlet UILabel *recommendedPlaceHolder;
+@property (weak, nonatomic) IBOutlet UILabel *currentPlaceHolder;
 
 @end
 
@@ -33,6 +36,7 @@
     // Do any additional setup after loading the view.
     self.headerViewHeight = self.headerView.frame.size.height;
     self.navigationItem.title = @"Grain";
+    self.displayEssential = EssentialGrains;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -41,6 +45,13 @@
 }
 
 -(void)viewDidAppear:(BOOL)animated{
+    if (self.displayEssential == EssentialAll) {
+        self.recommendedPlaceHolder.text = @"";
+    }
+    else {
+        NSString *temporaryString = [NSString stringWithFormat:@"%f",[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential]];
+     self.recommendedPlaceHolder.text = [temporaryString substringToIndex:temporaryString.length-4];
+    }
     [self.tableView reloadData];
 }
 
@@ -73,12 +84,17 @@
 
 
     BOOL greater = sender.selectedSegmentIndex > self.displayEssential;
-    
+    self.displayEssential = sender.selectedSegmentIndex;
     if (sender.selectedSegmentIndex == EssentialAll) {
+        self.recommendedPlaceHolder.text = @"";
+        self.currentPlaceHolder.text = @"";
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:0];
     } else {
+        NSString *temporaryString = [NSString stringWithFormat:@"%f",[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential]];
+        self.recommendedPlaceHolder.text = [temporaryString substringToIndex:temporaryString.length-4];
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:1];
     }
+    
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: greater ? UITableViewRowAnimationLeft : UITableViewRowAnimationRight];
     
@@ -107,8 +123,12 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    AddFoodEntryViewController *foodEntryViewController = [segue destinationViewController];
-    foodEntryViewController.essential = self.displayEssential;
+    if ([segue.identifier isEqualToString:@"addSegue"]) {
+        AddFoodEntryViewController *foodEntryViewController = [segue destinationViewController];
+        foodEntryViewController.essential = self.displayEssential;
+    }
+    
+    
     
 }
 

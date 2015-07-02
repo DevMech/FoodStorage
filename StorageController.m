@@ -100,8 +100,18 @@ static NSString * AllFoodEntriesKey = @"allFoodEntries";
 - (double)weightOrVolumeForEssential:(Essential)essential {
 
     // iterate through the entries in the array (that are not expired) and add them up and return the total
+    NSString *essentialKey = [NSString stringWithFormat:@"essential-%ld", (long)essential];
+    NSMutableArray *mutableFoodEntries = [[NSMutableArray alloc] initWithArray:[[NSUserDefaults standardUserDefaults] objectForKey:essentialKey]];
+    double weightOrVolume = 0.0;
     
-    return 0;
+    for (int i = 0; i< mutableFoodEntries.count; i++) {
+        FoodEntry *foodEntry = mutableFoodEntries[i];
+        weightOrVolume += [foodEntry.barcode doubleValue];
+    }
+    
+    
+    
+    return weightOrVolume;
     
 }
 

@@ -1,31 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="uCr-Qp-Dgn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hex-xh-eq6">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
-        <scene sceneID="Kmj-W0-gNg">
-            <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uCr-Qp-Dgn" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="ENs-Ih-riW"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="QqZ-PG-3JD">
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="hex-xh-eq6" kind="relationship" relationship="viewControllers" id="4vR-R5-ivf"/>
-                        <segue destination="dtR-tN-a9h" kind="relationship" relationship="viewControllers" id="Nf5-OB-aoW"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NSm-cE-gRD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759" y="247"/>
-        </scene>
         <!--Add Food Entry View Controller-->
         <scene sceneID="qA4-Q1-126">
             <objects>
@@ -219,25 +199,6 @@
             </objects>
             <point key="canvasLocation" x="3491" y="247"/>
         </scene>
-        <!--Calculator-->
-        <scene sceneID="kdx-9P-V5c">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dtR-tN-a9h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Calculator" id="gft-Z8-ura"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="coF-5s-SUc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="MVW-6Q-LXE" kind="relationship" relationship="rootViewController" id="YbT-Uu-9oE"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="557-oJ-CAH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="759" y="999"/>
-        </scene>
         <!--Calculator View Controller-->
         <scene sceneID="in1-nF-Ij0">
             <objects>
@@ -410,7 +371,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8u-LD-p5g" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469" y="999"/>
+            <point key="canvasLocation" x="2150" y="-409"/>
         </scene>
         <!--My Storage-->
         <scene sceneID="eIH-30-Fbq">
@@ -431,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="1457" y="247"/>
         </scene>
-        <!--Title-->
+        <!--Prepared-->
         <scene sceneID="04L-or-Z4U">
             <objects>
                 <tableViewController id="Dog-cN-WQi" customClass="FoodStorageViewController" sceneMemberID="viewController">
@@ -485,16 +446,31 @@
                                 <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-nE-pQN">
                                     <rect key="frame" x="156" y="116" width="436" height="2"/>
                                 </progressView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DW0-2o-h9f">
+                                    <rect key="frame" x="550" y="84" width="42" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="123" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="llx-ba-F00">
+                                    <rect key="frame" x="543" y="53" width="49" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="qCD-aI-KQy" firstAttribute="leading" secondItem="hyE-g4-ZD2" secondAttribute="leading" id="0bt-03-u97"/>
                                 <constraint firstItem="3bd-ap-2si" firstAttribute="top" secondItem="KAw-qD-7jd" secondAttribute="topMargin" id="2ry-pC-7Ic"/>
+                                <constraint firstItem="llx-ba-F00" firstAttribute="trailing" secondItem="3bd-ap-2si" secondAttribute="trailing" id="39S-2f-zkf"/>
                                 <constraint firstItem="3bd-ap-2si" firstAttribute="trailing" secondItem="KAw-qD-7jd" secondAttribute="trailingMargin" id="CJe-u9-mu3"/>
                                 <constraint firstItem="3bd-ap-2si" firstAttribute="trailing" secondItem="wa2-nE-pQN" secondAttribute="trailing" id="Ca7-2H-wrf"/>
                                 <constraint firstItem="hyE-g4-ZD2" firstAttribute="leading" secondItem="wa2-nE-pQN" secondAttribute="leading" id="DKV-XS-x61"/>
+                                <constraint firstItem="llx-ba-F00" firstAttribute="centerY" secondItem="qCD-aI-KQy" secondAttribute="centerY" id="IPI-Qg-dgW"/>
                                 <constraint firstItem="hyE-g4-ZD2" firstAttribute="centerY" secondItem="KAw-qD-7jd" secondAttribute="centerY" id="K84-Ly-Acr"/>
                                 <constraint firstItem="hyE-g4-ZD2" firstAttribute="top" secondItem="qCD-aI-KQy" secondAttribute="bottom" constant="10" id="Qit-rU-GQc"/>
+                                <constraint firstItem="DW0-2o-h9f" firstAttribute="top" secondItem="llx-ba-F00" secondAttribute="bottom" constant="10" id="Y9F-VX-kZh"/>
                                 <constraint firstAttribute="bottom" secondItem="wa2-nE-pQN" secondAttribute="bottom" constant="71" id="e2i-xz-Dsz"/>
                                 <constraint firstItem="wa2-nE-pQN" firstAttribute="top" secondItem="hyE-g4-ZD2" secondAttribute="bottom" constant="11" id="eii-dz-ZV3"/>
                                 <constraint firstItem="LbQ-Lb-psj" firstAttribute="top" secondItem="KAw-qD-7jd" secondAttribute="top" constant="53" id="iri-17-qdF"/>
@@ -503,6 +479,7 @@
                                 <constraint firstItem="qCD-aI-KQy" firstAttribute="top" secondItem="LbQ-Lb-psj" secondAttribute="top" id="mBt-Eg-VOz"/>
                                 <constraint firstItem="qCD-aI-KQy" firstAttribute="leading" secondItem="LbQ-Lb-psj" secondAttribute="trailing" constant="8" symbolic="YES" id="ohj-vd-OQz"/>
                                 <constraint firstItem="qCD-aI-KQy" firstAttribute="leading" secondItem="KAw-qD-7jd" secondAttribute="leading" constant="156" id="pMO-yQ-UMo"/>
+                                <constraint firstItem="llx-ba-F00" firstAttribute="trailing" secondItem="DW0-2o-h9f" secondAttribute="trailing" id="u5X-Nq-i7e"/>
                             </constraints>
                         </view>
                         <prototypes>
@@ -561,32 +538,39 @@
                             <outlet property="delegate" destination="Dog-cN-WQi" id="e4e-RM-vTX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="t0k-T5-8r4">
+                    <navigationItem key="navigationItem" title="Prepared" id="t0k-T5-8r4">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="V8e-9W-57C">
+                            <connections>
+                                <segue destination="MVW-6Q-LXE" kind="show" id="Kn8-Db-KKG"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" id="xvk-K7-DYn">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Sn6-YI-IQQ">
-                                <rect key="frame" x="-23" y="-15" width="133" height="30"/>
+                                <rect key="frame" x="439" y="7" width="30" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="r3c-dI-lss" kind="show" id="Tkb-Dq-13r"/>
+                                    <segue destination="r3c-dI-lss" kind="show" identifier="addSegue" id="eEU-lR-sk4"/>
                                 </connections>
                             </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="currentLabel" destination="hyE-g4-ZD2" id="buo-Cb-zAa"/>
+                        <outlet property="currentPlaceHolder" destination="DW0-2o-h9f" id="ftY-ue-Nd7"/>
                         <outlet property="headerView" destination="KAw-qD-7jd" id="rep-8U-6lI"/>
                         <outlet property="imageView" destination="LbQ-Lb-psj" id="b4h-hq-4LU"/>
                         <outlet property="progressBar" destination="wa2-nE-pQN" id="ZD6-Ck-Jfs"/>
                         <outlet property="recommendedLabel" destination="qCD-aI-KQy" id="HgZ-s2-s9T"/>
+                        <outlet property="recommendedPlaceHolder" destination="llx-ba-F00" id="HoE-zN-e94"/>
                         <outlet property="segmentedController" destination="3bd-ap-2si" id="JPl-Aj-7gH"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9eL-vi-NH8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2150" y="247"/>
+            <point key="canvasLocation" x="2144" y="247"/>
         </scene>
     </scenes>
 </document>
