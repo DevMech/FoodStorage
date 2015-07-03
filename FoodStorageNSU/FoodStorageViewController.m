@@ -39,8 +39,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.headerViewHeight = self.headerView.frame.size.height;
-//    self.navigationItem.title = self.selectedSegmentIndex;
     self.displayEssential = EssentialGrains;
+    self.imageView.image = [UIImage imageNamed:@"grains"];
     
    
 }
@@ -64,6 +64,7 @@
     if (self.displayEssential == EssentialAll) {
         self.recommendedPlaceHolder.text = @"";
         self.currentPlaceHolder.text = @"";
+        self.numberOfWeeks.text = @"";
         self.numberOfWeeksPlaceHolder.text = @"";
     }
     else {
@@ -71,6 +72,8 @@
     }
     [self.tableView reloadData];
     [self showProgressBar];
+    
+   
 }
 
 -(void)displayStats
@@ -110,7 +113,8 @@
 
 - (IBAction)segmentedControlUpdated:(UISegmentedControl *)sender {
 
-   
+    
+    
     BOOL greater = sender.selectedSegmentIndex > self.displayEssential;
     self.displayEssential = sender.selectedSegmentIndex;
     [self showProgressBar];
@@ -127,7 +131,30 @@
     
 
     [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation: greater ? UITableViewRowAnimationLeft : UITableViewRowAnimationRight];
-    
+    switch (self.displayEssential) {
+        case EssentialGrains:
+            self.imageView.image = [UIImage imageNamed:@"grains"];
+            break;
+        case EssentialDryBeans:
+            self.imageView.image = [UIImage imageNamed:@"beans"];
+            break;
+        case EssentialFatsAndOils:
+            self.imageView.image = [UIImage imageNamed:@"oils"];
+            break;
+        case EssentialPowderedMilk:
+            self.imageView.image = [UIImage imageNamed:@"milk"];
+            break;
+        case EssentialSalt:
+            self.imageView.image = [UIImage imageNamed:@"salt"];
+            break;
+        case EssentialWater:
+            self.imageView.image = [UIImage imageNamed:@"water"];
+            break;
+            
+        case EssentialAll:
+            self.imageView.image = nil;
+            break;
+    }
 }
 
 #pragma mark - TableViewDatasource

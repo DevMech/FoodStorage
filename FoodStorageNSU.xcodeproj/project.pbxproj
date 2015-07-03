@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		7D350B771B46F3B00070A1BE /* NSString+helperStrings.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D350B761B46F3B00070A1BE /* NSString+helperStrings.m */; };
+		7D350B791B47237B0070A1BE /* FoodStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D350B781B47237B0070A1BE /* FoodStorageViewController.m */; };
 		7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */; };
 		7DA242871B3E03F30006E7E0 /* StorageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA242861B3E03F30006E7E0 /* StorageTableViewCell.m */; };
 		7DA2428A1B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DA242891B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m */; };
 		7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */; };
-		7DD2DF761B34C06F006FB8E2 /* FoodStorageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */; };
 		7DEDE1941B331D7100AF11F2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1931B331D7100AF11F2 /* main.m */; };
 		7DEDE1971B331D7100AF11F2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DEDE1961B331D7100AF11F2 /* AppDelegate.m */; };
 		7DEDE19D1B331D7100AF11F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7DEDE19B1B331D7100AF11F2 /* Main.storyboard */; };
@@ -38,6 +38,7 @@
 /* Begin PBXFileReference section */
 		7D350B751B46F3B00070A1BE /* NSString+helperStrings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+helperStrings.h"; sourceTree = "<group>"; };
 		7D350B761B46F3B00070A1BE /* NSString+helperStrings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+helperStrings.m"; sourceTree = "<group>"; };
+		7D350B781B47237B0070A1BE /* FoodStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStorageViewController.m; sourceTree = "<group>"; };
 		7D76584C1B3B0C3000D4D6F4 /* AddFoodEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddFoodEntryViewController.h; sourceTree = "<group>"; };
 		7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddFoodEntryViewController.m; sourceTree = "<group>"; };
 		7DA242851B3E03F30006E7E0 /* StorageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageTableViewCell.h; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		7DD2DF701B34BBB6006FB8E2 /* NetworkingController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkingController.h; sourceTree = "<group>"; };
 		7DD2DF711B34BBB6006FB8E2 /* NetworkingController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkingController.m; sourceTree = "<group>"; };
 		7DD2DF741B34C06F006FB8E2 /* FoodStorageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodStorageViewController.h; sourceTree = "<group>"; };
-		7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FoodStorageViewController.m; sourceTree = "<group>"; };
 		7DEDE18E1B331D7100AF11F2 /* Prepared.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prepared.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DEDE1921B331D7100AF11F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7DEDE1931B331D7100AF11F2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -97,7 +97,7 @@
 				7D76584C1B3B0C3000D4D6F4 /* AddFoodEntryViewController.h */,
 				7D76584D1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m */,
 				7DD2DF741B34C06F006FB8E2 /* FoodStorageViewController.h */,
-				7DD2DF751B34C06F006FB8E2 /* FoodStorageViewController.m */,
+				7D350B781B47237B0070A1BE /* FoodStorageViewController.m */,
 			);
 			name = Food;
 			sourceTree = "<group>";
@@ -321,12 +321,12 @@
 				7D350B771B46F3B00070A1BE /* NSString+helperStrings.m in Sources */,
 				7DA242871B3E03F30006E7E0 /* StorageTableViewCell.m in Sources */,
 				7DD2DF721B34BBB6006FB8E2 /* NetworkingController.m in Sources */,
+				7D350B791B47237B0070A1BE /* FoodStorageViewController.m in Sources */,
 				7DEDE1BF1B33261500AF11F2 /* CalculatorViewController.m in Sources */,
 				7DEDE1BC1B331EA200AF11F2 /* FoodEntry.m in Sources */,
 				7DA2428A1B3F50E90006E7E0 /* CalculatorResultsStorageHelper.m in Sources */,
 				7DEDE1941B331D7100AF11F2 /* main.m in Sources */,
 				7D76584E1B3B0C3000D4D6F4 /* AddFoodEntryViewController.m in Sources */,
-				7DD2DF761B34C06F006FB8E2 /* FoodStorageViewController.m in Sources */,
 				7DEDE1B91B331E6000AF11F2 /* StorageController.m in Sources */,
 				7DEDE1D21B336F3E00AF11F2 /* BarCodeViewController.m in Sources */,
 				7DEDE1C51B3326DC00AF11F2 /* CalculatorController.m in Sources */,
