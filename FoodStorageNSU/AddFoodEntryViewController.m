@@ -39,6 +39,25 @@
     self.datePicker.alpha = 0;
 }
 
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+    switch (self.essential) {
+        case EssentialAll:
+            self.title = @"All Items";
+            break;
+            
+        default:{
+            FoodEntry *entry = [CalculatorResultsStorageHelper essentialEntry:self.essential];
+            self.title = entry.title;
+
+        }
+        break;
+    }
+
+}
+
 - (void)updateWithEssential:(Essential)essential  {
 
     if (essential == EssentialAll) {

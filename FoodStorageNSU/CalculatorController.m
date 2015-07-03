@@ -126,4 +126,15 @@ static NSNumber *waterPerPerson;
 
 }
 
+-(double)numberOfWeeks
+{
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"weeksKey"]) {
+        return [[[NSUserDefaults standardUserDefaults] objectForKey:@"weeksKey"] doubleValue];
+    }
+    else
+    {
+        return 0.0;
+    }
+}
+
 @end
