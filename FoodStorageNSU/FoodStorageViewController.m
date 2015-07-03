@@ -67,13 +67,13 @@
         self.numberOfWeeks.text = @"";
         self.numberOfWeeksPlaceHolder.text = @"";
     }
-    else {
+    else
+    {
         [self displayStats];
+        [self showProgressBar];
     }
     [self.tableView reloadData];
-    [self showProgressBar];
     
-   
 }
 
 -(void)displayStats
@@ -122,6 +122,8 @@
     if (sender.selectedSegmentIndex == EssentialAll) {
         self.recommendedPlaceHolder.text = @"";
         self.currentPlaceHolder.text = @"";
+        self.numberOfWeeksPlaceHolder.text = @"";
+        self.numberOfWeeks.text = @"";
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:0];
     } else {
         [self displayStats];

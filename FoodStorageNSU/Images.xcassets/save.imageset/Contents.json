@@ -3,22 +3,21 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "Peanuts-100.png"
+      "filename" : "Save As-64.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "Peanuts-100-1.png"
+      "filename" : "Save As-64-1.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "Peanuts-100-2.png"
+      "filename" : "Save As-64-2.png"
     }
   ],
   "info" : {
     "version" : 1,
-    "author" : "xcode",
-    "template-rendering-intent" : "template"
+    "author" : "xcode"
   }
 }
