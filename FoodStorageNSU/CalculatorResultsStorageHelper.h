@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "StorageController.h"
+@import UIKit;
 
 
 @interface CalculatorResultsStorageHelper : NSObject

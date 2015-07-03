@@ -21,6 +21,7 @@ static NSNumber *waterPerPerson;
 @interface CalculatorController ()
 
 @property (nonatomic,strong) NSArray *arrayOfRequirements;
+//@property (nonatomic, strong) NSNumber *numberOfWeeks;
 
 @end
 
@@ -33,14 +34,14 @@ static NSNumber *waterPerPerson;
     dispatch_once(&onceToken, ^{
         sharedInstance = [[CalculatorController alloc] init];
         
-//        sharedInstance.arrayOfRequirements = @[
+
         grainsPerPerson = [NSNumber numberWithFloat:6.25f];
         dryBeansPerPerson = [NSNumber numberWithFloat:1.25f];
         fatsAndOilsPerPerson = [NSNumber numberWithFloat:2.5f];
         powderedMilkPerPerson = [NSNumber numberWithFloat:4];
         saltPerPerson = [NSNumber numberWithFloat:2];
         waterPerPerson = [NSNumber numberWithFloat:7];
-//        ];
+
     });
     return sharedInstance;
 }
@@ -56,7 +57,9 @@ static NSNumber *waterPerPerson;
     }
     return self;
 }
-
+- (void)numberOfWeeks:(NSNumber *)numberofWeeks {
+    
+}
 - (void)amountByFamily:(NSString *)adults andKids:(NSString *)kids andNumberOfWeeks:(NSString *)weeks
 {
     
@@ -66,8 +69,11 @@ static NSNumber *waterPerPerson;
     
     
     NSNumber *numberOfAdults = [formatter numberFromString:adults];
+    [[NSUserDefaults standardUserDefaults] setObject:numberOfAdults forKey:@"adultsKey"];
     NSNumber *numberOfKids = [formatter numberFromString:kids];
+    [[NSUserDefaults standardUserDefaults] setObject:numberOfKids forKey:@"kidsKey"];
     NSNumber *numberOfWeeks = [formatter numberFromString:weeks];
+    [[NSUserDefaults standardUserDefaults] setObject:numberOfWeeks forKey:@"weeksKey"];
     //Defining the instances using the foramtting to use the numbers from the labels
     
     

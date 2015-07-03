@@ -38,12 +38,32 @@
 }
 - (IBAction)weekStepperChange:(id)sender {
     self.weekNumber.text = [@(self.weekStepper.value) stringValue];
+    [CalculatorController sharedInstance].numberOfWeeks = self.weekStepper.value;
 }
 - (IBAction)calculateAmounts:(id)sender {
     [self.navigationController popViewControllerAnimated:YES];
     [[CalculatorController sharedInstance] amountByFamily:self.adultsNumber.text andKids:self.childNumber.text andNumberOfWeeks:self.weekNumber.text];
-    
 }
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"adultsKey"]) {
+        self.adultStepper.value =[[[NSUserDefaults standardUserDefaults] objectForKey:@"adultsKey"]doubleValue];
+        self.adultsNumber.text = [@(self.adultStepper.value) stringValue];
+
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"kidsKey"]) {
+        self.childStepper.value =[[[NSUserDefaults standardUserDefaults] objectForKey:@"kidsKey"]doubleValue];
+        self.childNumber.text = [@(self.childStepper.value) stringValue];
+
+    }
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"weeksKey"]) {
+        self.weekStepper.value =[[[NSUserDefaults standardUserDefaults] objectForKey:@"weeksKey"]doubleValue];
+        self.weekNumber.text = [@(self.weekStepper.value) stringValue];
+    }
+
+}
+
 
 #pragma mark -
 #pragma mark - DataSource
@@ -66,6 +86,7 @@
 {
     return 2;
 }
+
 
 
 @end

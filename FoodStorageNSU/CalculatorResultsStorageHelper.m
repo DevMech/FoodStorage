@@ -15,7 +15,8 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
 @interface CalculatorResultsStorageHelper ()
 
 @property (nonatomic, strong) NSArray *essentialEntries;
-@property (nonatomic, strong) NSArray *grainEntries;
+@property (nonatomic, assign) double currentValue;
+
 
 @end
 
@@ -63,5 +64,7 @@ static NSString * AllEssentialEntriesKey = @"allEssentialEntries";
     return entry.requiredAmount.doubleValue;
     
 }
+
+
 
 @end

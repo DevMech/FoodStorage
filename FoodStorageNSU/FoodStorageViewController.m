@@ -11,6 +11,8 @@
 #import "StorageTableViewCell.h"
 #import "CalculatorResultsStorageHelper.h"
 #import "AddFoodEntryViewController.h"
+#import "CalculatorController.h"
+#import "NSString+helperStrings.h"
 
 
 
@@ -26,6 +28,8 @@
 @property (assign, nonatomic) CGFloat headerViewHeight;
 @property (weak, nonatomic) IBOutlet UILabel *recommendedPlaceHolder;
 @property (weak, nonatomic) IBOutlet UILabel *currentPlaceHolder;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfWeeks;
+@property (weak, nonatomic) IBOutlet UILabel *numberOfWeeksPlaceHolder;
 
 @end
 
@@ -35,8 +39,20 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.headerViewHeight = self.headerView.frame.size.height;
-    self.navigationItem.title = @"Grain";
+//    self.navigationItem.title = self.selectedSegmentIndex;
     self.displayEssential = EssentialGrains;
+    
+   
+}
+
+- (void)showProgressBar
+{
+    if (self.displayEssential != EssentialAll) {
+        
+        double values = [[StorageController sharedInstance] weightOrVolumeForEssential:self.displayEssential]/[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential];
+        NSNumber *percentageForProgress = [NSNumber numberWithDouble:values];
+        self.progressBar.progress = [percentageForProgress floatValue]; NSLog(@"%@", percentageForProgress);
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,12 +63,24 @@
 -(void)viewDidAppear:(BOOL)animated{
     if (self.displayEssential == EssentialAll) {
         self.recommendedPlaceHolder.text = @"";
+        self.currentPlaceHolder.text = @"";
+        self.numberOfWeeksPlaceHolder.text = @"";
     }
     else {
-        NSString *temporaryString = [NSString stringWithFormat:@"%f",[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential]];
-     self.recommendedPlaceHolder.text = [temporaryString substringToIndex:temporaryString.length-4];
+        [self displayStats];
     }
     [self.tableView reloadData];
+    [self showProgressBar];
+}
+
+-(void)displayStats
+{
+    NSString *temporaryString = [NSString stringWithFormat:@"%.1f %@",[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential], [NSString getSuffixForEssential:self.displayEssential]];
+    self.recommendedPlaceHolder.text = temporaryString;
+    NSString *string = [NSString stringWithFormat:@"%.1f %@",[[StorageController sharedInstance] weightOrVolumeForEssential:self.displayEssential], [NSString getSuffixForEssential:self.displayEssential]];
+    self.currentPlaceHolder.text = string;
+    NSString *weeksString = [NSString stringWithFormat:@"%.1f", [CalculatorController sharedInstance].numberOfWeeks];
+    self.numberOfWeeksPlaceHolder.text = weeksString;
 }
 
 - (void)setEssentialValues:(Essential)EssentialSetting Alpha:(int)alpha {
@@ -82,16 +110,18 @@
 
 - (IBAction)segmentedControlUpdated:(UISegmentedControl *)sender {
 
-
+   
     BOOL greater = sender.selectedSegmentIndex > self.displayEssential;
     self.displayEssential = sender.selectedSegmentIndex;
+    [self showProgressBar];
+    
     if (sender.selectedSegmentIndex == EssentialAll) {
         self.recommendedPlaceHolder.text = @"";
         self.currentPlaceHolder.text = @"";
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:0];
     } else {
-        NSString *temporaryString = [NSString stringWithFormat:@"%f",[CalculatorResultsStorageHelper requiredAmountForEssential:self.displayEssential]];
-        self.recommendedPlaceHolder.text = [temporaryString substringToIndex:temporaryString.length-4];
+        [self displayStats];
+
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:1];
     }
     
@@ -128,6 +158,7 @@
         foodEntryViewController.essential = self.displayEssential;
     }
     
+
     
     
 }

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface CalculatorController : NSObject
+@property (nonatomic, assign) double numberOfWeeks;
 
 +(instancetype)sharedInstance;
 

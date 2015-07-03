@@ -49,11 +49,21 @@
         
         switch (essential) {
             case EssentialGrains:
-                self.UpcAndWeightLabel.text = @"Weight";
+                self.amountLabel.text = @"Pounds";
                 break;
             case EssentialDryBeans:
-                self.UpcAndWeightLabel.text = @"Weight";
+                self.amountLabel.text = @"Pounds";
                 break;
+            case EssentialFatsAndOils:
+                self.amountLabel.text = @"Quarts";
+                break;
+            case EssentialPowderedMilk:
+                self.amountLabel.text = @"Pounds";
+                break;
+            case EssentialSalt:
+                self.amountLabel.text = @"Pounds";
+            case EssentialWater:
+                self.amountLabel.text = @"Gallons";
                 
                 
             default:
