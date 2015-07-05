@@ -15,7 +15,7 @@
 {
     self = [super init];
     if (self) {
-        [[UINavigationBar appearance]setTintColor:[UIColor colorWithRed:0.12 green:0.64 blue:0.29 alpha:1]];
+        [[UINavigationBar appearance]setTintColor:[UIColor colorWithRed:0 green:0.8 blue:0.2 alpha:1]];
     }
     return self;
 }

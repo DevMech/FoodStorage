@@ -115,13 +115,16 @@
     
 }
 
+
 - (IBAction)calendarPopUp:(id)sender {
     self.datePicker.enabled = YES;
     
     [UIView animateWithDuration:1.5 animations:^{
         self.datePicker.alpha = 1;
+        
+      
     }];
-    
+   
 }
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField{
