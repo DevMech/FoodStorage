@@ -41,6 +41,7 @@
     self.headerViewHeight = self.headerView.frame.size.height;
     self.displayEssential = EssentialGrains;
     self.imageView.image = [UIImage imageNamed:@"grains"];
+
     
     
    
@@ -75,6 +76,7 @@
     [self.tableView reloadData];
     
 }
+
 
 -(void)displayStats
 {
@@ -161,6 +163,10 @@
 
 #pragma mark - TableViewDatasource
 
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
+
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     StorageTableViewCell  *cell = [tableView dequeueReusableCellWithIdentifier:@"foodCell"];
     
@@ -177,6 +183,21 @@
     
 }
 
+
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    FoodEntry *foodEntry = [[StorageController sharedInstance] entriesForEssential:self.displayEssential][indexPath.row];
+    [[StorageController sharedInstance] removeFoodEntry:foodEntry forEssential:self.displayEssential];
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        
+        [self.tableView reloadData];
+        [self viewDidAppear:YES];
+        
+       
+        
+    }
+
+}
 
 
 
