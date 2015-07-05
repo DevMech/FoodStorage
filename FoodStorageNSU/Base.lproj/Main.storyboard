@@ -392,7 +392,7 @@
             </objects>
             <point key="canvasLocation" x="1457" y="247"/>
         </scene>
-        <!--Prepared-->
+        <!--Food Storage View Controller-->
         <scene sceneID="04L-or-Z4U">
             <objects>
                 <tableViewController id="Dog-cN-WQi" customClass="FoodStorageViewController" sceneMemberID="viewController">
@@ -437,41 +437,42 @@
                                         <constraint firstAttribute="width" constant="120" id="07k-KA-bH5"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Current" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="hyE-g4-ZD2">
                                     <rect key="frame" x="156" y="84" width="58" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-nE-pQN">
-                                    <rect key="frame" x="116" y="146" width="476" height="2"/>
+                                <progressView autoresizesSubviews="NO" opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wa2-nE-pQN">
+                                    <rect key="frame" x="116" y="145" width="476" height="2"/>
+                                    <rect key="contentStretch" x="1" y="0.0" width="1" height="1"/>
                                     <color key="progressTintColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                 </progressView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="llx-ba-F00">
                                     <rect key="frame" x="414" y="54" width="178" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="#ofWeeks" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="ukK-5T-tpW">
                                     <rect key="frame" x="156" y="113" width="76" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="bVA-dP-Sz9">
                                     <rect key="frame" x="414" y="113" width="178" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="right" lineBreakMode="clip" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DW0-2o-h9f">
                                     <rect key="frame" x="414" y="84" width="178" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="textColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
@@ -568,7 +569,7 @@
                             <outlet property="delegate" destination="Dog-cN-WQi" id="e4e-RM-vTX"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Prepared" id="t0k-T5-8r4">
+                    <navigationItem key="navigationItem" id="t0k-T5-8r4">
                         <barButtonItem key="leftBarButtonItem" image="settings" id="V8e-9W-57C">
                             <color key="tintColor" red="0.11764705882352941" green="0.64313725490196083" blue="0.29411764705882354" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>

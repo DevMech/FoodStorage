@@ -42,6 +42,7 @@
     self.displayEssential = EssentialGrains;
     self.imageView.image = [UIImage imageNamed:@"grains"];
     
+    
    
 }
 
@@ -64,8 +65,7 @@
     if (self.displayEssential == EssentialAll) {
         self.recommendedPlaceHolder.text = @"";
         self.currentPlaceHolder.text = @"";
-        self.numberOfWeeks.text = @"";
-        self.numberOfWeeksPlaceHolder.text = @"";
+        
     }
     else
     {
