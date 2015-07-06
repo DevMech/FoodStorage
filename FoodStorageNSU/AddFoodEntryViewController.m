@@ -81,9 +81,10 @@
                 break;
             case EssentialSalt:
                 self.amountLabel.text = @"Pounds";
+                break;
             case EssentialWater:
                 self.amountLabel.text = @"Gallons";
-                
+                break;
                 
             default:
                 break;

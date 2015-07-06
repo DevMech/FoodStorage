@@ -159,6 +159,7 @@
         case EssentialAll:
             self.imageView.image = nil;
             break;
+            
     }
 }
 
