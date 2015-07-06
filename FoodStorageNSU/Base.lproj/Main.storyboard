@@ -596,7 +596,7 @@
         <image name="addFood" width="50" height="50"/>
         <image name="calculate" width="64" height="64"/>
         <image name="calendar" width="64" height="64"/>
-        <image name="save" width="64" height="64"/>
+        <image name="save" width="50" height="50"/>
         <image name="settings" width="50" height="50"/>
     </resources>
 </document>

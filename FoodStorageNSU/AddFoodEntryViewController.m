@@ -23,7 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *typeText;
 @property (weak, nonatomic) IBOutlet UITextField *amountText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
-
+@property (nonatomic, assign) BOOL calendarVisible;
 
 
 @end
@@ -118,12 +118,22 @@
 
 - (IBAction)calendarPopUp:(id)sender {
     self.datePicker.enabled = YES;
+    self.calendarVisible =! self.calendarVisible;
+    if (self.calendarVisible == true) {
+        [UIView animateWithDuration:1.5 animations:^{
+            self.datePicker.alpha = 1;
+            
+            
+        }];
+    }else {
+        [UIView animateWithDuration:1.5 animations:^{
+            self.datePicker.alpha = 0;
+            
+            
+        }];
+    }
     
-    [UIView animateWithDuration:1.5 animations:^{
-        self.datePicker.alpha = 1;
-        
-      
-    }];
+  
    
 }
 
