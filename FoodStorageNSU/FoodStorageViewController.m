@@ -41,6 +41,7 @@
     self.headerViewHeight = self.headerView.frame.size.height;
     self.displayEssential = EssentialGrains;
     self.imageView.image = [UIImage imageNamed:@"grains"];
+    self.progressBar.transform = CGAffineTransformMakeScale(1.0f, 4.0f);
 
     
     
