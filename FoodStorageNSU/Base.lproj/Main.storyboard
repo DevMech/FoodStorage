@@ -48,18 +48,6 @@
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hbG-QD-948">
-                                <rect key="frame" x="248" y="475" width="104" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="104" id="aYR-Jz-YRX"/>
-                                </constraints>
-                                <state key="normal" image="save">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="saveButtonTapped:" destination="r3c-dI-lss" eventType="touchUpInside" id="Bqx-VG-nNK"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYc-cF-ehp">
                                 <rect key="frame" x="16" y="80" width="46" height="21"/>
                                 <constraints>
@@ -106,7 +94,7 @@
                                     <outlet property="delegate" destination="r3c-dI-lss" id="LCP-K3-24d"/>
                                 </connections>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U98-Ke-tpZ">
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U98-Ke-tpZ">
                                 <rect key="frame" x="0.0" y="270" width="600" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="457046237.17621797">
                                     <!--2015-06-26 21:17:17 +0000-->
@@ -128,8 +116,6 @@
                             <constraint firstItem="xFz-ud-I7m" firstAttribute="trailing" secondItem="Ujw-Tb-g8e" secondAttribute="trailing" id="0xF-60-ve3"/>
                             <constraint firstItem="xFz-ud-I7m" firstAttribute="centerY" secondItem="rCr-uz-wCe" secondAttribute="centerY" constant="0.5" id="906-r7-80T"/>
                             <constraint firstItem="ZAz-g1-5bw" firstAttribute="top" secondItem="rCr-uz-wCe" secondAttribute="bottom" constant="24" id="AOF-bq-fkG"/>
-                            <constraint firstItem="Dch-JW-Swp" firstAttribute="top" secondItem="hbG-QD-948" secondAttribute="bottom" constant="61" id="IUE-0U-Ary"/>
-                            <constraint firstAttribute="centerX" secondItem="hbG-QD-948" secondAttribute="centerX" id="JkI-sn-er3"/>
                             <constraint firstItem="Ujw-Tb-g8e" firstAttribute="centerY" secondItem="cFD-de-DIk" secondAttribute="centerY" constant="0.5" id="KHj-VZ-6Zg"/>
                             <constraint firstItem="U98-Ke-tpZ" firstAttribute="top" secondItem="ZL8-Xi-8mU" secondAttribute="bottom" constant="-3" id="Kfk-c5-Fz3"/>
                             <constraint firstItem="ZL8-Xi-8mU" firstAttribute="centerY" secondItem="QG6-BP-3rh" secondAttribute="centerY" constant="-8.5" id="Lks-HB-7pG"/>
@@ -138,7 +124,6 @@
                             <constraint firstItem="bYc-cF-ehp" firstAttribute="leading" secondItem="Mi1-gX-ZG9" secondAttribute="leadingMargin" id="Nsk-Yv-OCy"/>
                             <constraint firstItem="lu8-qY-L5i" firstAttribute="centerY" secondItem="bYc-cF-ehp" secondAttribute="centerY" constant="0.5" id="QQy-rz-zbo"/>
                             <constraint firstItem="juA-Ba-Emh" firstAttribute="trailing" secondItem="xFz-ud-I7m" secondAttribute="trailing" id="SCS-Ag-UBH"/>
-                            <constraint firstItem="U98-Ke-tpZ" firstAttribute="centerX" secondItem="hbG-QD-948" secondAttribute="centerX" id="VUb-fG-Vsz"/>
                             <constraint firstItem="juA-Ba-Emh" firstAttribute="top" secondItem="xFz-ud-I7m" secondAttribute="bottom" constant="15" id="VrQ-EB-k4o"/>
                             <constraint firstItem="juA-Ba-Emh" firstAttribute="trailing" secondItem="QG6-BP-3rh" secondAttribute="trailing" id="YzY-nh-jpg"/>
                             <constraint firstItem="ZL8-Xi-8mU" firstAttribute="top" secondItem="ZAz-g1-5bw" secondAttribute="bottom" constant="19" id="aY6-Tu-UZg"/>
@@ -161,7 +146,13 @@
                             <constraint firstItem="bYc-cF-ehp" firstAttribute="top" secondItem="I7F-SN-SpH" secondAttribute="bottom" constant="16" id="zbv-Kj-I8F"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="jc7-Jx-zbB"/>
+                    <navigationItem key="navigationItem" id="jc7-Jx-zbB">
+                        <barButtonItem key="rightBarButtonItem" image="save" id="xIm-9H-Ys9">
+                            <connections>
+                                <action selector="saveButtonTapped:" destination="r3c-dI-lss" id="jQA-uN-WY7"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="UpcAndWeightLabel" destination="cFD-de-DIk" id="J9k-G1-gOP"/>
                         <outlet property="UpcAndWeightText" destination="Ujw-Tb-g8e" id="Tqb-c2-1sq"/>
@@ -171,7 +162,7 @@
                         <outlet property="expirationDateLabel" destination="ZL8-Xi-8mU" id="2W5-sw-Bav"/>
                         <outlet property="nameLabel" destination="bYc-cF-ehp" id="tOb-rx-hbf"/>
                         <outlet property="nameText" destination="lu8-qY-L5i" id="5kb-ju-Ord"/>
-                        <outlet property="saveButton" destination="hbG-QD-948" id="gg3-Kd-E5O"/>
+                        <outlet property="saveButton" destination="xIm-9H-Ys9" id="ZhK-av-wwr"/>
                         <outlet property="typeLabel" destination="rCr-uz-wCe" id="KFd-GV-OqO"/>
                         <outlet property="typeText" destination="xFz-ud-I7m" id="C6b-c9-YLq"/>
                     </connections>

@@ -17,13 +17,13 @@
 @property (weak, nonatomic) IBOutlet UILabel *typeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *amountLabel;
 @property (weak, nonatomic) IBOutlet UILabel *expirationDateLabel;
-@property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UITextField *nameText;
 @property (weak, nonatomic) IBOutlet UITextField *UpcAndWeightText;
 @property (weak, nonatomic) IBOutlet UITextField *typeText;
 @property (weak, nonatomic) IBOutlet UITextField *amountText;
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic, assign) BOOL calendarVisible;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
 
 
 @end
