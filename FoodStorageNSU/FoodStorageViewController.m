@@ -93,6 +93,7 @@
     self.displayEssential = EssentialSetting;
     self.recommendedLabel.alpha = alpha;
     self.currentLabel.alpha = alpha;
+    self.numberOfWeeks.alpha = alpha;
     self.progressBar.alpha = alpha;
     self.imageView.alpha = alpha;
     if (alpha == 0) {
@@ -125,7 +126,6 @@
         self.recommendedPlaceHolder.text = @"";
         self.currentPlaceHolder.text = @"";
         self.numberOfWeeksPlaceHolder.text = @"";
-        self.numberOfWeeks.text = @"";
         [self setEssentialValues:sender.selectedSegmentIndex Alpha:0];
     } else {
         [self displayStats];

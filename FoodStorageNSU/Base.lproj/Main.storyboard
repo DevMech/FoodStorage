@@ -379,10 +379,10 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3bd-ap-2si">
-                                    <rect key="frame" x="8" y="8" width="584" height="29"/>
+                                    <rect key="frame" x="8" y="8" width="584" height="31"/>
                                     <color key="backgroundColor" red="0.96733323559999995" green="1" blue="0.96227286840000004" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" constant="28" id="rXi-Ky-HAt"/>
+                                        <constraint firstAttribute="height" constant="30" id="rXi-Ky-HAt"/>
                                     </constraints>
                                     <segments>
                                         <segment title="Grain"/>
@@ -399,7 +399,7 @@
                                     </connections>
                                 </segmentedControl>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LbQ-Lb-psj">
-                                    <rect key="frame" x="8" y="53" width="100" height="100"/>
+                                    <rect key="frame" x="8" y="55" width="100" height="100"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="100" id="egk-Fr-uOM"/>
                                         <constraint firstAttribute="width" constant="100" id="kx5-Yj-p7H"/>
