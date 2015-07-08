@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "FoodStorageNSU/AddFoodEntryViewController.m"
-            timestampString = "457910462.439305"
+            timestampString = "457910638.112109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "-updateWithEssential:"
             landmarkType = "5">
          </BreakpointContent>
