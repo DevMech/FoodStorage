@@ -181,7 +181,7 @@
                         <sections>
                             <tableViewSection id="px7-0E-c4o">
                                 <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="Ki7-Zu-eUV">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="Ki7-Zu-eUV">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ki7-Zu-eUV" id="f6g-Pg-n8m">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -218,7 +218,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="eJY-p5-gtZ">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="eJY-p5-gtZ">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eJY-p5-gtZ" id="D00-AM-ItR">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -255,7 +255,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="cDm-JX-7xr">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="cDm-JX-7xr">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cDm-JX-7xr" id="Mmb-sM-vwS">
                                             <autoresizingMask key="autoresizingMask"/>
@@ -290,23 +290,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="GC1-Nc-hFj">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="GC1-Nc-hFj">
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GC1-Nc-hFj" id="X4x-QA-Zvf">
                                             <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                            <tableViewSection id="I6o-wA-0ie">
-                                <cells>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="G1V-nZ-ulO">
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G1V-nZ-ulO" id="20l-m2-jty">
-                                            <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rIf-ph-gZa">
-                                                    <rect key="frame" x="268" y="0.0" width="64" height="64"/>
+                                                    <rect key="frame" x="268" y="18" width="64" height="64"/>
                                                     <color key="tintColor" red="0.1176470588" green="0.64313725489999995" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <state key="normal" image="calculate"/>
                                                     <connections>
@@ -315,9 +305,19 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="rIf-ph-gZa" firstAttribute="centerX" secondItem="20l-m2-jty" secondAttribute="centerX" id="KNC-Rz-gT3"/>
-                                                <constraint firstItem="rIf-ph-gZa" firstAttribute="top" secondItem="20l-m2-jty" secondAttribute="top" id="x11-NA-gN6"/>
+                                                <constraint firstItem="rIf-ph-gZa" firstAttribute="centerX" secondItem="X4x-QA-Zvf" secondAttribute="centerX" id="rhP-22-AhQ"/>
+                                                <constraint firstItem="rIf-ph-gZa" firstAttribute="centerY" secondItem="X4x-QA-Zvf" secondAttribute="centerY" id="ypF-wI-0g1"/>
                                             </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection id="I6o-wA-0ie">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="100" id="G1V-nZ-ulO">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G1V-nZ-ulO" id="20l-m2-jty">
+                                            <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -492,7 +492,7 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="80" id="ZVh-3e-VlG" customClass="StorageTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="foodCell" rowHeight="80" id="ZVh-3e-VlG" customClass="StorageTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZVh-3e-VlG" id="ujn-zX-aRb">
                                     <autoresizingMask key="autoresizingMask"/>
