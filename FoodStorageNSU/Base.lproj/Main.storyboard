@@ -94,7 +94,7 @@
                                     <outlet property="delegate" destination="r3c-dI-lss" id="LCP-K3-24d"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG6-BP-3rh">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QG6-BP-3rh">
                                 <rect key="frame" x="520" y="239" width="64" height="64"/>
                                 <state key="normal" image="calendar">
                                     <color key="titleColor" red="0.17224405979999999" green="0.2259072097" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -105,14 +105,27 @@
                                 </connections>
                             </button>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="U98-Ke-tpZ">
-                                <rect key="frame" x="140" y="285" width="320" height="162"/>
+                                <rect key="frame" x="140" y="284" width="320" height="162"/>
                                 <date key="date" timeIntervalSinceReferenceDate="457046237.17621797">
                                     <!--2015-06-26 21:17:17 +0000-->
                                 </date>
                             </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X8C-BC-Xvu">
+                                <rect key="frame" x="52" y="119" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="yr5-si-fjq"/>
+                                </constraints>
+                                <state key="normal" image="barcode">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UPCButtonTapped:" destination="r3c-dI-lss" eventType="touchUpInside" id="UPk-PR-6AZ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="X8C-BC-Xvu" firstAttribute="leading" secondItem="cFD-de-DIk" secondAttribute="trailing" id="0TN-Ls-0Y5"/>
                             <constraint firstItem="xFz-ud-I7m" firstAttribute="trailing" secondItem="Ujw-Tb-g8e" secondAttribute="trailing" id="0xF-60-ve3"/>
                             <constraint firstItem="U98-Ke-tpZ" firstAttribute="top" secondItem="ZL8-Xi-8mU" secondAttribute="bottom" constant="12" id="3S5-Mt-mXd"/>
                             <constraint firstItem="xFz-ud-I7m" firstAttribute="centerY" secondItem="rCr-uz-wCe" secondAttribute="centerY" constant="0.5" id="906-r7-80T"/>
@@ -120,6 +133,7 @@
                             <constraint firstAttribute="centerX" secondItem="U98-Ke-tpZ" secondAttribute="centerX" id="G45-pD-g9t"/>
                             <constraint firstItem="Ujw-Tb-g8e" firstAttribute="centerY" secondItem="cFD-de-DIk" secondAttribute="centerY" constant="0.5" id="KHj-VZ-6Zg"/>
                             <constraint firstItem="ZL8-Xi-8mU" firstAttribute="centerY" secondItem="QG6-BP-3rh" secondAttribute="centerY" constant="-8.5" id="Lks-HB-7pG"/>
+                            <constraint firstItem="X8C-BC-Xvu" firstAttribute="bottom" secondItem="Ujw-Tb-g8e" secondAttribute="bottom" id="NDJ-bL-7eX"/>
                             <constraint firstItem="cFD-de-DIk" firstAttribute="leading" secondItem="rCr-uz-wCe" secondAttribute="leading" id="Nex-0i-IAL"/>
                             <constraint firstItem="rCr-uz-wCe" firstAttribute="leading" secondItem="ZAz-g1-5bw" secondAttribute="leading" id="Npn-R1-wfv"/>
                             <constraint firstItem="bYc-cF-ehp" firstAttribute="leading" secondItem="Mi1-gX-ZG9" secondAttribute="leadingMargin" id="Nsk-Yv-OCy"/>
@@ -137,9 +151,11 @@
                             <constraint firstItem="bYc-cF-ehp" firstAttribute="leading" secondItem="cFD-de-DIk" secondAttribute="leading" id="jUH-pR-UnS"/>
                             <constraint firstItem="xFz-ud-I7m" firstAttribute="top" secondItem="Ujw-Tb-g8e" secondAttribute="bottom" constant="14" id="l3Q-IH-H4I"/>
                             <constraint firstItem="lu8-qY-L5i" firstAttribute="top" secondItem="I7F-SN-SpH" secondAttribute="bottom" constant="12" id="mhj-Oj-7Ot"/>
+                            <constraint firstItem="X8C-BC-Xvu" firstAttribute="trailing" secondItem="ZL8-Xi-8mU" secondAttribute="trailing" constant="-36" id="o0D-kK-VtP"/>
                             <constraint firstItem="ZAz-g1-5bw" firstAttribute="centerY" secondItem="juA-Ba-Emh" secondAttribute="centerY" constant="-0.5" id="po7-IN-ggZ"/>
                             <constraint firstItem="cFD-de-DIk" firstAttribute="top" secondItem="bYc-cF-ehp" secondAttribute="bottom" constant="22" id="q97-u7-7RW"/>
                             <constraint firstItem="lu8-qY-L5i" firstAttribute="leading" secondItem="bYc-cF-ehp" secondAttribute="trailing" constant="83" id="qX3-Zh-MSk"/>
+                            <constraint firstItem="X8C-BC-Xvu" firstAttribute="top" secondItem="Ujw-Tb-g8e" secondAttribute="top" id="vYg-la-QbN"/>
                             <constraint firstItem="lu8-qY-L5i" firstAttribute="leading" secondItem="Ujw-Tb-g8e" secondAttribute="leading" id="wW3-yb-bN8"/>
                             <constraint firstItem="ZAz-g1-5bw" firstAttribute="leading" secondItem="ZL8-Xi-8mU" secondAttribute="leading" id="x2n-EJ-uGQ"/>
                             <constraint firstItem="bYc-cF-ehp" firstAttribute="top" secondItem="I7F-SN-SpH" secondAttribute="bottom" constant="16" id="zbv-Kj-I8F"/>
@@ -153,6 +169,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="UPCButton" destination="X8C-BC-Xvu" id="5bE-Ii-o1i"/>
                         <outlet property="UpcAndWeightLabel" destination="cFD-de-DIk" id="J9k-G1-gOP"/>
                         <outlet property="UpcAndWeightText" destination="Ujw-Tb-g8e" id="Tqb-c2-1sq"/>
                         <outlet property="amountLabel" destination="ZAz-g1-5bw" id="V8P-yW-TWB"/>
@@ -586,6 +603,7 @@
     </scenes>
     <resources>
         <image name="addFood" width="50" height="50"/>
+        <image name="barcode" width="50" height="50"/>
         <image name="calculate" width="64" height="64"/>
         <image name="calendar" width="64" height="64"/>
         <image name="save" width="50" height="50"/>

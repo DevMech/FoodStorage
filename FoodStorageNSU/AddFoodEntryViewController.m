@@ -24,6 +24,7 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 @property (nonatomic, assign) BOOL calendarVisible;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *saveButton;
+@property (weak, nonatomic) IBOutlet UIButton *UPCButton;
 
 
 @end
@@ -108,12 +109,15 @@
     self.typeText.text = @"";
     self.amountText.text = @"";
     
+    
     [UIView animateWithDuration:1.5 animations:^{
         self.datePicker.alpha = 0;
     }];
     
     [self.navigationController popToRootViewControllerAnimated:YES];
     
+}
+- (IBAction)UPCButtonTapped:(id)sender {
 }
 
 

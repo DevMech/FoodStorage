@@ -41,7 +41,7 @@
             }else {
                 NSLog(@"Request Failed");
             }
-        }
+        } 
     }];
     
     [task resume];

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>13E6C9A2-90A5-4710-A1A6-30DA3EEA0582</string>
+	<key>IDESourceControlProjectName</key>
+	<string>FoodStorageNSU</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>B3A7538BFAF55E0DA1C59BAAA4709DC64AF624EE</key>
+		<string>https://github.com/DevMech/FoodStorage.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>FoodStorageNSU.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>B3A7538BFAF55E0DA1C59BAAA4709DC64AF624EE</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/DevMech/FoodStorage.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>B3A7538BFAF55E0DA1C59BAAA4709DC64AF624EE</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B3A7538BFAF55E0DA1C59BAAA4709DC64AF624EE</string>
+			<key>IDESourceControlWCCName</key>
+			<string>FoodStorageNSU</string>
+		</dict>
+	</array>
+</dict>
+</plist>

@@ -21,13 +21,13 @@ static NSNumber *waterPerPerson;
 @interface CalculatorController ()
 
 @property (nonatomic,strong) NSArray *arrayOfRequirements;
-//@property (nonatomic, strong) NSNumber *numberOfWeeks;
+
 
 @end
 
 @implementation CalculatorController
 
-+ (instancetype)sharedInstance { //Create Variable
++ (instancetype)sharedInstance {
     
     static CalculatorController *sharedInstance = nil;
     static dispatch_once_t onceToken;
@@ -52,7 +52,6 @@ static NSNumber *waterPerPerson;
     if (self) {
 
         
-        // CONSTANTS FOR THE CALCULATIONS
 
     }
     return self;
@@ -65,7 +64,7 @@ static NSNumber *waterPerPerson;
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     formatter.numberStyle = NSNumberFormatterDecimalStyle;
-    //We're Formatting the incoming string to become NSNumbers
+    
     
     
     NSNumber *numberOfAdults = [formatter numberFromString:adults];
@@ -74,11 +73,11 @@ static NSNumber *waterPerPerson;
     [[NSUserDefaults standardUserDefaults] setObject:numberOfKids forKey:@"kidsKey"];
     NSNumber *numberOfWeeks = [formatter numberFromString:weeks];
     [[NSUserDefaults standardUserDefaults] setObject:numberOfWeeks forKey:@"weeksKey"];
-    //Defining the instances using the foramtting to use the numbers from the labels
+    
     
     
     NSNumber *numberOfPeople = @([numberOfAdults floatValue] + [numberOfKids floatValue]);
-    //Defining what number of people is adding the number of adults by the number of kids.
+   
     
     NSNumber *requiredGrains = @([numberOfPeople floatValue] * [grainsPerPerson floatValue] * [numberOfWeeks floatValue]);
     NSNumber *requiredDryBeans = @([numberOfPeople floatValue] * [dryBeansPerPerson floatValue] * [numberOfWeeks floatValue]);
@@ -87,10 +86,8 @@ static NSNumber *waterPerPerson;
     NSNumber *requiredSalt = @([numberOfPeople floatValue] * [saltPerPerson floatValue] * [numberOfWeeks floatValue]);
     NSNumber *requiredWater = @([numberOfPeople floatValue] * [waterPerPerson floatValue] * [numberOfWeeks floatValue]);
     
-    //setting the requiered ammount of essentials - taking the number of people multiplied by the requiered amount and the number of weeks
         
     for (int i = 0; i < [StorageController sharedInstance].essentialNames.count; i++) {
-        // THE INDEX NUMBER NEEDS TO CORRELATE WITH THE INDEXES OF THE TABLE VIEW IN THE MAIN VIEW CONTROLLER
         
         
         Essential essential = i;
